@@ -3,6 +3,7 @@
 import Head from 'next/head';
 import React from 'react';
 import Header from '../components/Header';
+import SearchLeftBar from '../components/SearchLeftBar';
 
 export default function Home() {
   return (
@@ -11,8 +12,9 @@ export default function Home() {
         <title> Wine</title>
       </Head>
 
+      <Header />
+      <SearchLeftBar />
       <main>
-        <Header />
         <h1>Hello Wine</h1>
       </main>
     </div>
