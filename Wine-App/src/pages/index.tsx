@@ -1,9 +1,16 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
+import Router, { useRouter } from 'next/router';
 
 export default function Home() {
-  const path = window.location.pathname;
-  console.log(path);
+  const path = useRouter();
+
+  useEffect(() => {
+    if (path.pathname === '/') {
+      Router.push('/1');
+    }
+  });
+
   return (
     <div>
       <Head>
