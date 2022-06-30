@@ -1,45 +1,44 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import MyContext from '../contexts/MyContext';
 
 function SearchLeftBar() {
+  const [selectedBtn, setSelectedBtn] = useState('');
   const {
     products, toggle, setToggle, setFilteredProducts,
   } = useContext<any>(MyContext);
 
-  const handleFilterClick = async ({ min, max, id }) => {
-    const elementById: any = document.getElementById(id);
+  const isRadioSelected = (id: string): boolean => selectedBtn === id;
 
-    const minNumber = Number(min);
-    const maxNumber = Number(max);
+  const handleRadioClick = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setSelectedBtn(e.target.id);
+  };
 
-    if (!toggle && maxNumber === 0) {
-      const filter = products.filter((p) => p.price <= minNumber);
-      setFilteredProducts(filter);
-      return setToggle(true);
+  const handleFilterOnClick = ({ target }) => {
+    const minNumber = Number(target.min);
+    const maxNumber = Number(target.max);
+    const { id } = target;
+
+    if (selectedBtn !== id && maxNumber === 0) {
+      const filter = products.filter(({ price }) => price <= minNumber);
+      return setFilteredProducts(filter);
     }
+    setSelectedBtn('');
     setFilteredProducts(null);
-    setToggle(!toggle);
 
-    if (!toggle && minNumber === 0) {
-      const filter = products.filter((p) => p.price >= maxNumber);
-      setFilteredProducts(filter);
-      return setToggle(true);
+    if (selectedBtn !== id && minNumber === 0) {
+      const filter = products.filter(({ price }) => price >= maxNumber);
+      return setFilteredProducts(filter);
     }
+    setSelectedBtn('');
     setFilteredProducts(null);
-    setToggle(!toggle);
 
-    if (!toggle) {
-      const filter = products.filter(
-        (p) => p.price >= minNumber && p.price <= maxNumber,
-      );
-      setFilteredProducts(filter);
-      return setToggle(true);
+    if (selectedBtn !== id) {
+      const filter = products.filter(({ price }) => price >= minNumber && price <= maxNumber);
+      return setFilteredProducts(filter);
     }
-    setFilteredProducts(null);
-    elementById.checked = false;
-    return setToggle(!toggle);
+    return setFilteredProducts(null);
   };
 
   return (
@@ -49,56 +48,75 @@ function SearchLeftBar() {
       <form id="form">
         <label htmlFor="40">
           <input
-            onClick={(e: any) => handleFilterClick(e.target)}
             value="40"
             min={40}
             max={0}
             type="radio"
             id="40"
+            name="radio-price"
+            checked={isRadioSelected('40')}
+            onChange={handleRadioClick}
+            onClick={handleFilterOnClick}
           />
           Até R$40
         </label>
         <label htmlFor="40-60">
           <input
-            onClick={(e: any) => handleFilterClick(e.target)}
+            checked={isRadioSelected('40-60')}
             value="40-60"
             type="radio"
             id="40-60"
             min={40}
             max={60}
+            name="radio-price"
+            onChange={handleRadioClick}
+            onClick={handleFilterOnClick}
+
           />
           R$40 A R$60
         </label>
         <label htmlFor="100-200">
           <input
-            onClick={(e: any) => handleFilterClick(e.target)}
+            checked={isRadioSelected('100-200')}
             type="radio"
             id="100-200"
             value="100-200"
             min={100}
             max={200}
+            name="radio-price"
+            onChange={handleRadioClick}
+            onClick={handleFilterOnClick}
+
           />
           R$100 A R$200
         </label>
         <label htmlFor="200-500">
           <input
-            onClick={(e: any) => handleFilterClick(e.target)}
+            checked={isRadioSelected('200-500')}
             value="200-500"
             type="radio"
             id="200-500"
             min={200}
             max={500}
+            name="radio-price"
+            onChange={handleRadioClick}
+            onClick={handleFilterOnClick}
+
           />
           R$200 A R$500
         </label>
         <label htmlFor="500">
           <input
-            onClick={(e: any) => handleFilterClick(e.target)}
+            checked={isRadioSelected('500')}
             value="500"
             type="radio"
             id="500"
             min={0}
             max={500}
+            name="radio-price"
+            onChange={handleRadioClick}
+            onClick={handleFilterOnClick}
+
           />
           Acimade R$500
         </label>
