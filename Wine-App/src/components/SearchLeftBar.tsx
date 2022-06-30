@@ -1,22 +1,23 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-import React, { useContext } from "react";
-import MyContext from "../contexts/MyContext";
+import React, { useContext } from 'react';
+import MyContext from '../contexts/MyContext';
 
 function SearchLeftBar() {
-  const { products, toggle, setToggle, setFilteredProducts } =
-    useContext<any>(MyContext);
+  const {
+    products, toggle, setToggle, setFilteredProducts,
+  } = useContext<any>(MyContext);
 
-  console.log(toggle);
+  const handleFilterClick = async ({ min, max, id }) => {
+    const elementById: any = document.getElementById(id);
 
-  const handleFilterClick = async ({ min, max }) => {
     const minNumber = Number(min);
     const maxNumber = Number(max);
 
     if (!toggle && maxNumber === 0) {
       const filter = products.filter((p) => p.price <= minNumber);
       setFilteredProducts(filter);
-      return setToggle(!toggle);
+      return setToggle(true);
     }
     setFilteredProducts(null);
     setToggle(!toggle);
@@ -24,25 +25,28 @@ function SearchLeftBar() {
     if (!toggle && minNumber === 0) {
       const filter = products.filter((p) => p.price >= maxNumber);
       setFilteredProducts(filter);
-      return setToggle(!toggle);
+      return setToggle(true);
     }
     setFilteredProducts(null);
     setToggle(!toggle);
 
     if (!toggle) {
-      const filter = products.filter((p) => p.price >= minNumber && p.price <= maxNumber);
+      const filter = products.filter(
+        (p) => p.price >= minNumber && p.price <= maxNumber,
+      );
       setFilteredProducts(filter);
-      return setToggle(!toggle);
+      return setToggle(true);
     }
     setFilteredProducts(null);
-    setToggle(!toggle);
+    elementById.checked = false;
+    return setToggle(!toggle);
   };
 
   return (
     <section>
       <strong>Refine sua busca</strong>
       <p>Por preço</p>
-      <form>
+      <form id="form">
         <label htmlFor="40">
           <input
             onClick={(e: any) => handleFilterClick(e.target)}
