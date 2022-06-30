@@ -12,13 +12,10 @@ interface IProps {
 function MyProvider({ children }: IProps) {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState(null);
-  const [toggle, setToggle] = useState(false);
 
   const datas: any = {
     products,
     setProducts,
-    toggle,
-    setToggle,
     filteredProducts,
     setFilteredProducts,
   };

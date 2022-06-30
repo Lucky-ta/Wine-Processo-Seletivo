@@ -6,7 +6,7 @@ import MyContext from '../contexts/MyContext';
 function SearchLeftBar() {
   const [selectedBtn, setSelectedBtn] = useState('');
   const {
-    products, toggle, setToggle, setFilteredProducts,
+    products, setFilteredProducts,
   } = useContext<any>(MyContext);
 
   const isRadioSelected = (id: string): boolean => selectedBtn === id;
