@@ -4,13 +4,12 @@ import axios from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 import Header from '../components/Header';
+import Pagination from '../components/Pagination';
 import ProductCards from '../components/ProductCards';
 import SearchLeftBar from '../components/SearchLeftBar';
 import { IApiResponse } from '../interfaces/IApiResponse';
 
 function Store({ items }: IApiResponse) {
-  console.log(items);
-
   return (
     <div>
       <Header />
@@ -18,6 +17,7 @@ function Store({ items }: IApiResponse) {
       {items.map((i) => (
         <ProductCards key={i.id} item={i} />
       ))}
+      <Pagination />
     </div>
   );
 }
