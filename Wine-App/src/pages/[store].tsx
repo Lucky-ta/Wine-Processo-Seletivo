@@ -4,6 +4,7 @@ import axios from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 import Header from '../components/Header';
+import ProductCards from '../components/ProductCards';
 import SearchLeftBar from '../components/SearchLeftBar';
 import { IApiResponse } from '../interfaces/IApiResponse';
 
@@ -14,9 +15,9 @@ function Store({ items }: IApiResponse) {
     <div>
       <Header />
       <SearchLeftBar />
-      <main>
-        <h1>Hello Wine</h1>
-      </main>
+      {items.map((i) => (
+        <ProductCards key={i.id} item={i} />
+      ))}
     </div>
   );
 }

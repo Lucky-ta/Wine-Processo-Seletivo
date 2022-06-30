@@ -1,4 +1,4 @@
-type Item = {
+export type Item = {
     avaliations: number;
     classification: string;
     country: string;
