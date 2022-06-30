@@ -1,22 +1,37 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MyContext from '../contexts/MyContext';
+import fetchProducts from '../services/fetchProducts';
 
 interface IProps {
-    children: React.ReactNode;
-   }
+  children: React.ReactNode;
+}
 
 function MyProvider({ children }: IProps) {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
-  const data: any = {
+  const datas: any = {
     products,
     setProducts,
+    toggle,
+    setToggle,
+    filteredProducts,
+    setFilteredProducts,
   };
 
-  return <MyContext.Provider value={data}>{children}</MyContext.Provider>;
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const response = await fetchProducts();
+      setProducts(response.items);
+    };
+    fetchProduct();
+  }, []);
+
+  return <MyContext.Provider value={datas}>{children}</MyContext.Provider>;
 }
 
 export default MyProvider;

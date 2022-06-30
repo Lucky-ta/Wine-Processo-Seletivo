@@ -5,19 +5,18 @@ import Header from '../components/Header';
 import Pagination from '../components/Pagination';
 import ProductCards from '../components/ProductCards';
 import SearchLeftBar from '../components/SearchLeftBar';
-import { IApiResponse } from '../interfaces/IApiResponse';
 import MyContext from '../contexts/MyContext';
 
-function Store({ items }: IApiResponse) {
-  const { products, setProducts } = useContext<any>(MyContext);
+function Store() {
+  const { products, setProducts, filteredProducts } = useContext<any>(MyContext);
 
   return (
     <div>
       <Header />
       <SearchLeftBar />
-      {items.map((i) => (
-        <ProductCards key={i.id} item={i} />
-      ))}
+      {filteredProducts !== null
+        ? filteredProducts.map((i) => <ProductCards key={i.id} item={i} />)
+        : products.map((i) => <ProductCards key={i.id} item={i} />)}
       <Pagination />
     </div>
   );
