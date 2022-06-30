@@ -48,7 +48,6 @@ function SearchLeftBar() {
       <form id="form">
         <label htmlFor="40">
           <input
-            value="40"
             min={40}
             max={0}
             type="radio"
@@ -63,7 +62,6 @@ function SearchLeftBar() {
         <label htmlFor="40-60">
           <input
             checked={isRadioSelected('40-60')}
-            value="40-60"
             type="radio"
             id="40-60"
             min={40}
@@ -80,7 +78,6 @@ function SearchLeftBar() {
             checked={isRadioSelected('100-200')}
             type="radio"
             id="100-200"
-            value="100-200"
             min={100}
             max={200}
             name="radio-price"
@@ -93,7 +90,6 @@ function SearchLeftBar() {
         <label htmlFor="200-500">
           <input
             checked={isRadioSelected('200-500')}
-            value="200-500"
             type="radio"
             id="200-500"
             min={200}
@@ -108,7 +104,6 @@ function SearchLeftBar() {
         <label htmlFor="500">
           <input
             checked={isRadioSelected('500')}
-            value="500"
             type="radio"
             id="500"
             min={0}
