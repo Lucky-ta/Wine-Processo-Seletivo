@@ -3,13 +3,17 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 3em;
     width: 100%;
     gap: 2em;
     font-family: 'Lato', sans-serif;
     color: #333333;;
     margin-top: 8em;
-    margin-left: 6em;
+    margin-left: 4em;
+
+    @media(max-width: 690px) {
+    display: none;
+  }
+
 `;
 
 export const FilterContainer = styled.div`

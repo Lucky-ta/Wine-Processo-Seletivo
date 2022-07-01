@@ -1,27 +1,31 @@
 import styled from 'styled-components';
 
 export const GlobalContainer = styled.div`
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 20% 40%;
-    grid-template-rows: 1fr;
-`;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
 
-export const Container = styled.div`
-    display: flex;
-    justify-content: end;
-    margin-right: 7em;
-    font-family: 'Lato', sans-serif;
+    @media(max-width: 690px) {
+        grid-template-columns: 1fr;
+  }
 `;
 
 export const ProductsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    max-width: 80%;
     gap: 2em;
     text-align: center;
     margin-top: 10em;
+    margin-right: 4em;
+    font-family: 'Lato', sans-serif;
+
+    @media(max-width: 690px) {
+    margin-left: 4em;
+    margin-right: 4em;
+
+  }
 `;
 
 export const CardContainer = styled.div`

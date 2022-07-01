@@ -11,6 +11,8 @@ export const Container = styled.div`
     color: grey;
     position: fixed;
     top: 0;
+    padding-left: 2em;
+    padding-right: 2em;
 `;
 
 export const ContentContainer = styled.div`
@@ -22,7 +24,7 @@ export const ContentContainer = styled.div`
 `;
 
 export const Image = styled.img`
-    padding-left: 7em;
+    padding-left: 5em;
 `;
 
 export const ButtonsContainer = styled.div`

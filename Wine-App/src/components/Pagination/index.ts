@@ -6,10 +6,17 @@ const StyledPaginateContainer = styled.div`
     color: #0366d6;
     gap: 2em;
     align-items: center;
-    margin-top: 2.2em;
     list-style-type: none;
     width: 100%;
-    justify-content: center;
+    max-width: 30em;
+    margin-top: 2.3em;
+    margin-bottom: 1.3em;
+    margin-left: 60vh;
+    
+    @media(max-width: 690px) {
+      margin: auto;
+      margin-top: 2.4em;
+  }
   }
 
   .prev, .next {
