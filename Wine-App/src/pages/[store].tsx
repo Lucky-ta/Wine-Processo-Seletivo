@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import Header from '../components/Header/Header';
 import Pagination from '../components/Pagination';
 import ProductCards from '../components/ProductCards';
-import SearchLeftBar from '../components/SearchLeftBar';
+import SearchLeftBar from '../components/LeftFilter/SearchLeftBar';
 import MyContext from '../contexts/MyContext';
 import { IApiResponse, Item } from '../interfaces/IApiResponse';
 

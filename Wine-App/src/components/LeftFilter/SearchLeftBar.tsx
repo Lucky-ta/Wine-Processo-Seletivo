@@ -1,11 +1,16 @@
 import React, { useContext, useState } from 'react';
-import MyContext from '../contexts/MyContext';
+import MyContext from '../../contexts/MyContext';
+import {
+  Container,
+  FilterContainer,
+  FilterTitle,
+  RadioInput,
+  RadioLabel,
+} from '.';
 
 function SearchLeftBar() {
   const [selectedBtn, setSelectedBtn] = useState('');
-  const {
-    products, setFilteredProducts,
-  } = useContext<any>(MyContext);
+  const { products, setFilteredProducts } = useContext<any>(MyContext);
 
   const isRadioSelected = (id: string): boolean => selectedBtn === id;
 
@@ -33,19 +38,21 @@ function SearchLeftBar() {
     setFilteredProducts(null);
 
     if (selectedBtn !== id) {
-      const filter = products.filter(({ price }) => price >= minNumber && price <= maxNumber);
+      const filter = products.filter(
+        ({ price }) => price >= minNumber && price <= maxNumber,
+      );
       return setFilteredProducts(filter);
     }
     return setFilteredProducts(null);
   };
 
   return (
-    <section>
-      <strong>Refine sua busca</strong>
+    <Container>
+      <FilterTitle>Refine sua busca</FilterTitle>
       <p>Por preço</p>
-      <form id="form">
-        <label htmlFor="40">
-          <input
+      <FilterContainer id="form">
+        <RadioLabel htmlFor="40">
+          <RadioInput
             min={40}
             max={0}
             type="radio"
@@ -56,9 +63,9 @@ function SearchLeftBar() {
             onClick={handleFilterOnClick}
           />
           Até R$40
-        </label>
-        <label htmlFor="40-60">
-          <input
+        </RadioLabel>
+        <RadioLabel htmlFor="40-60">
+          <RadioInput
             checked={isRadioSelected('40-60')}
             type="radio"
             id="40-60"
@@ -67,12 +74,11 @@ function SearchLeftBar() {
             name="radio-price"
             onChange={handleRadioClick}
             onClick={handleFilterOnClick}
-
           />
           R$40 A R$60
-        </label>
-        <label htmlFor="100-200">
-          <input
+        </RadioLabel>
+        <RadioLabel htmlFor="100-200">
+          <RadioInput
             checked={isRadioSelected('100-200')}
             type="radio"
             id="100-200"
@@ -81,12 +87,11 @@ function SearchLeftBar() {
             name="radio-price"
             onChange={handleRadioClick}
             onClick={handleFilterOnClick}
-
           />
           R$100 A R$200
-        </label>
-        <label htmlFor="200-500">
-          <input
+        </RadioLabel>
+        <RadioLabel htmlFor="200-500">
+          <RadioInput
             checked={isRadioSelected('200-500')}
             type="radio"
             id="200-500"
@@ -95,12 +100,11 @@ function SearchLeftBar() {
             name="radio-price"
             onChange={handleRadioClick}
             onClick={handleFilterOnClick}
-
           />
           R$200 A R$500
-        </label>
-        <label htmlFor="500">
-          <input
+        </RadioLabel>
+        <RadioLabel htmlFor="500">
+          <RadioInput
             checked={isRadioSelected('500')}
             type="radio"
             id="500"
@@ -109,12 +113,11 @@ function SearchLeftBar() {
             name="radio-price"
             onChange={handleRadioClick}
             onClick={handleFilterOnClick}
-
           />
           Acimade R$500
-        </label>
-      </form>
-    </section>
+        </RadioLabel>
+      </FilterContainer>
+    </Container>
   );
 }
 
