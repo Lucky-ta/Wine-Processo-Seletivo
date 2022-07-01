@@ -13,18 +13,24 @@ export const Container = styled.div`
     top: 0;
     padding-left: 2em;
     padding-right: 2em;
+
+    .profileBtn {
+        @media(max-width: 690px) {
+        display: none;
+  }
+    }
 `;
 
 export const ContentContainer = styled.div`
     display: flex;
     margin-left: 0;
     gap: 2em;
-    padding-left: 5em;
-    padding-right: 6em;
 `;
 
 export const Image = styled.img`
-    padding-left: 5em;
+    padding-left: 4em;
+    margin-right: 5em;
+
 `;
 
 export const ButtonsContainer = styled.div`

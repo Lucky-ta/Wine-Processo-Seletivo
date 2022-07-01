@@ -42,19 +42,8 @@ function Header() {
         <Button type="button" onClick={() => setIsFilter(!isFilter)}>
           <IoIosSearch size="3em" />
         </Button>
-        {isFilter && (
-          <SearchInputContainer>
-            <SearchInput
-              type="text"
-              placeholder="Bacalhôa Quinta.."
-              onChange={(e) => setItem(e.target.value)}
-            />
-            <SearchButton type="button" onClick={handlerFilterByName}>
-              Buscar
-            </SearchButton>
-          </SearchInputContainer>
-        )}
-        <Button type="button">
+        
+        <Button className="profileBtn" type="button">
           <VscAccount size="2.8em" />
         </Button>
         <Button type="button">

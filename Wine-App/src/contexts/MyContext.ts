@@ -8,6 +8,8 @@ export type ContextFunc = {
     setFilteredProducts: () => void,
     cart: Cart[],
     setCart: () => void,
+    toggle: boolean,
+    setToggle: () => void;
 }
 
 const context = createContext<ContextFunc>(undefined);

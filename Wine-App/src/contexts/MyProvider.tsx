@@ -8,6 +8,7 @@ interface IProps {
 }
 
 function MyProvider({ children }: IProps) {
+  const [toggle, setToggle] = useState(false);
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState(null);
@@ -19,6 +20,8 @@ function MyProvider({ children }: IProps) {
     setFilteredProducts,
     cart,
     setCart,
+    toggle,
+    setToggle,
   };
 
   useEffect(() => {

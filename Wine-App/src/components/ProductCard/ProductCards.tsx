@@ -15,9 +15,10 @@ import {
   NotMember,
   SideToSideSpansContainer,
 } from '.';
+import { SearchButton, SearchInput, SearchInputContainer } from '../Header';
 
 function ProductCards({ item }: any) {
-  const { cart } = useContext<any>(MyContext);
+  const { cart, toggle } = useContext<any>(MyContext);
   const handleAddItemToCart = () => {
     const cartShape: Cart = {
       id: item.id,
@@ -48,6 +49,20 @@ function ProductCards({ item }: any) {
 
   return (
     <div>
+      <div>
+        {toggle && (
+        <SearchInputContainer>
+          <SearchInput
+            type="text"
+            placeholder="Bacalhôa Quinta.."
+            onChange={(e) => setItem(e.target.value)}
+          />
+          <SearchButton type="button" onClick={handlerFilterByName}>
+            Buscar
+          </SearchButton>
+        </SearchInputContainer>
+        )}
+      </div>
       <CardContainer>
         <Image src={item.image} alt="" />
         <ItemName>{item.name}</ItemName>
