@@ -5,13 +5,11 @@ export const Container = styled.div`
     flex-direction: column;
     margin-top: 3em;
     width: 100%;
-    max-width: 20%;
     gap: 2em;
     font-family: 'Lato', sans-serif;
     color: #333333;;
-    position: fixed;
-    left: 6.7em;
-    top: 4.3em;
+    margin-top: 8em;
+    margin-left: 6em;
 `;
 
 export const FilterContainer = styled.div`

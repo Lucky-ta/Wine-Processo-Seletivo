@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const GlobalContainer = styled.div`
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 40%;
+    grid-template-rows: 1fr;
+`;
+
 export const Container = styled.div`
     display: flex;
     justify-content: end;

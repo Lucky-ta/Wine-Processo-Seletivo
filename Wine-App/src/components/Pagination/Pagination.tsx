@@ -1,6 +1,7 @@
 import ReactPaginate from 'react-paginate';
 import React from 'react';
 import { useRouter } from 'next/router';
+import StyledPaginateContainer from '.';
 
 function Pagination() {
   const path = useRouter();
@@ -9,7 +10,7 @@ function Pagination() {
   };
 
   return (
-    <footer>
+    <StyledPaginateContainer>
       <ReactPaginate
         pageCount={7}
         marginPagesDisplayed={3}
@@ -19,8 +20,12 @@ function Pagination() {
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         renderOnZeroPageCount={null}
+        containerClassName="container"
+        previousLinkClassName="prev"
+        nextClassName="next"
+        pageLinkClassName="link"
       />
-    </footer>
+    </StyledPaginateContainer>
   );
 }
 
