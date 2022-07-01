@@ -60,7 +60,7 @@ function ProductCards({ item }: any) {
           <RS>R$ </RS>
           <MemberPrice>{item.priceMember}</MemberPrice>
         </SideToSideSpansContainer>
-        <NotMember>{`Nao socio, ${item.price}`}</NotMember>
+        <NotMember>{`NÃO SÓCIO, ${item.price}`}</NotMember>
       </CardContainer>
       <AddItemButton onClick={handleAddItemToCart} type="button">
         ADICIONAR

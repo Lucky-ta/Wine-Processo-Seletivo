@@ -85,7 +85,8 @@ export const RS = styled.span`
 
 export const NotMember = styled.p`
     color:  #888888;
-    padding: 1em
+    padding: 1em;
+    font-size: 0.8em;
 `;
 
 export const SideToSideSpansContainer = styled.div`
