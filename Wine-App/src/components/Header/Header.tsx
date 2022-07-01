@@ -1,8 +1,19 @@
 import React, { useContext, useState } from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { VscAccount } from 'react-icons/vsc';
+import { GiBeachBag } from 'react-icons/gi';
 import MyContext from '../../contexts/MyContext';
-import { Container, ContentContainer, Image } from '.';
+import {
+  Container,
+  ContentContainer,
+  Image,
+  ButtonsContainer,
+  Button,
+  SwitchPageButton,
+  SearchInputContainer,
+  SearchInput,
+  SearchButton,
+} from '.';
 
 function Header() {
   const [isFilter, setIsFilter] = useState(false);
@@ -22,32 +33,34 @@ function Header() {
       />
       <ContentContainer>
         <span>Clube</span>
-        <span>Loja</span>
+        <SwitchPageButton>Loja</SwitchPageButton>
         <span>Produtores</span>
         <span>Ofertas</span>
         <span>Eventos</span>
       </ContentContainer>
-      <div>
-        <button type="button" onClick={() => setIsFilter(!isFilter)}>
-          <IoIosSearch />
-        </button>
+      <ButtonsContainer>
+        <Button type="button" onClick={() => setIsFilter(!isFilter)}>
+          <IoIosSearch size="3em" />
+        </Button>
         {isFilter && (
-          <div>
-            <input
+          <SearchInputContainer>
+            <SearchInput
               type="text"
-              placeholder="VINHO"
+              placeholder="Bacalhôa Quinta.."
               onChange={(e) => setItem(e.target.value)}
             />
-            <button type="button" onClick={handlerFilterByName}>
+            <SearchButton type="button" onClick={handlerFilterByName}>
               Buscar
-            </button>
-          </div>
+            </SearchButton>
+          </SearchInputContainer>
         )}
-        <button type="button">
-          <VscAccount />
-        </button>
-        <button type="button">Cart</button>
-      </div>
+        <Button type="button">
+          <VscAccount size="2.8em" />
+        </Button>
+        <Button type="button">
+          <GiBeachBag size="2.8em" />
+        </Button>
+      </ButtonsContainer>
     </Container>
   );
 }

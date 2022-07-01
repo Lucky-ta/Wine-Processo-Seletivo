@@ -31,7 +31,7 @@ describe('Test Header Component', () => {
 
     const searchButton = screen.getByText(/Search/i);
     fireEvent.click(searchButton);
-    const searchInput = screen.getByPlaceholderText(/VINHO/i);
+    const searchInput = screen.getByPlaceholderText(/Bacalhôa Quinta../i);
 
     expect(searchButton).toBeInTheDocument();
     expect(searchInput).toBeInTheDocument();
