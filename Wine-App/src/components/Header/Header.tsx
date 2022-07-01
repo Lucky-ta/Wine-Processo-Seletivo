@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import MyContext from '../contexts/MyContext';
+import MyContext from '../../contexts/MyContext';
+import { Container, ContentContainer, Image } from '.';
 
 function Header() {
   const [isFilter, setIsFilter] = useState(false);
@@ -12,18 +13,18 @@ function Header() {
   };
 
   return (
-    <header>
-      <img
+    <Container>
+      <Image
         src="https://centraldeajuda.wine.com.br/static/media/LogoWine.dc8aad50.svg"
         alt="wine-logo"
       />
-      <nav>
+      <ContentContainer>
         <span>Clube</span>
         <span>Loja</span>
         <span>Produtores</span>
         <span>Ofertas</span>
         <span>Eventos</span>
-      </nav>
+      </ContentContainer>
       <div>
         <button type="button" onClick={() => setIsFilter(!isFilter)}>
           Search
@@ -43,7 +44,7 @@ function Header() {
         <button type="button">Profile</button>
         <button type="button">Cart</button>
       </div>
-    </header>
+    </Container>
   );
 }
 

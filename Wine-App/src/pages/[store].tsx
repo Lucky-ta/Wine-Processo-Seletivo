@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React, { useContext } from 'react';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import Pagination from '../components/Pagination';
 import ProductCards from '../components/ProductCards';
 import SearchLeftBar from '../components/SearchLeftBar';
