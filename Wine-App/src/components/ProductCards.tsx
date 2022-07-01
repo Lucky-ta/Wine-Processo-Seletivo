@@ -2,12 +2,13 @@
 /* eslint-disable import/extensions */
 import React, { useContext } from 'react';
 import MyContext from '../contexts/MyContext';
+import { Cart } from '../interfaces/IApiResponse';
 import formatPrice from '../services/formatFunctions/formatPrice';
 
 function ProductCards({ item }: any) {
   const { cart } = useContext<any>(MyContext);
   const handleAddItemToCart = () => {
-    const cartShape = {
+    const cartShape: Cart = {
       id: item.id,
       name: item.name,
       price: item.price,

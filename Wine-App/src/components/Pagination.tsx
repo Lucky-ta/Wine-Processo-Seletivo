@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 function Pagination() {
   const path = useRouter();
-  const handlePageClick = (event) => {
+  const handlePageClick = (event: any) => {
     path.push(`/${event.selected + 1}`);
   };
 

@@ -17,6 +17,17 @@ export type Item = {
     type: string;
 }
 
+export type Cart = {
+    id: number,
+    name: string,
+    price: number,
+    discount: number,
+    priceMember: number,
+    totalPrice: number,
+    totalMemberPrice: number,
+    quantity: number,
+}
+
 export interface IApiResponse {
     items: Item[];
     itemsPerPage: number;

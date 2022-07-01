@@ -8,8 +8,9 @@ import Pagination from '../components/Pagination';
 import ProductCards from '../components/ProductCards';
 import SearchLeftBar from '../components/SearchLeftBar';
 import MyContext from '../contexts/MyContext';
+import { IApiResponse, Item } from '../interfaces/IApiResponse';
 
-function Store({ items }: any) {
+function Store({ items }: IApiResponse) {
   const { filteredProducts } = useContext<any>(MyContext);
 
   return (
@@ -17,7 +18,7 @@ function Store({ items }: any) {
       <Header />
       <SearchLeftBar />
       {filteredProducts !== null
-        ? filteredProducts.map((i) => <ProductCards key={i.id} item={i} />)
+        ? filteredProducts.map((i: Item) => <ProductCards key={i.id} item={i} />)
         : items.map((i) => <ProductCards key={i.id} item={i} />)}
       <Pagination />
     </div>
@@ -37,7 +38,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const response = await axios.get(
     `https://wine-back-test.herokuapp.com/products?page=${store}&limit=10`,
   );
-  const json = response.data;
+  const json: IApiResponse = response.data;
   return { props: json, revalidate: 3600 };
 };
 
