@@ -11,6 +11,7 @@ interface IProps {
 
 function MyProvider({ children }: IProps) {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState(null);
 
   const datas: any = {
@@ -18,6 +19,8 @@ function MyProvider({ children }: IProps) {
     setProducts,
     filteredProducts,
     setFilteredProducts,
+    cart,
+    setCart,
   };
 
   useEffect(() => {
@@ -26,6 +29,16 @@ function MyProvider({ children }: IProps) {
       setProducts(response.items);
     };
     fetchProduct();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storageCart: any = JSON.parse(localStorage.getItem('WineCart'));
+      if (!storageCart) {
+        localStorage.setItem('WineCart', JSON.stringify(cart));
+      }
+      setCart(storageCart);
+    }
   }, []);
 
   return <MyContext.Provider value={datas}>{children}</MyContext.Provider>;
