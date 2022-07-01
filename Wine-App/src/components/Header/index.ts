@@ -15,8 +15,8 @@ export const ContentContainer = styled.div`
     gap: 2em;
     padding-left: 5em;
     padding-right: 6em;
-`
+`;
 
 export const Image = styled.img`
     padding-left: 7em;
-`
+`;

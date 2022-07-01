@@ -1,4 +1,6 @@
 import React, { useContext, useState } from 'react';
+import { IoIosSearch } from 'react-icons/io';
+import { VscAccount } from 'react-icons/vsc';
 import MyContext from '../../contexts/MyContext';
 import { Container, ContentContainer, Image } from '.';
 
@@ -27,7 +29,7 @@ function Header() {
       </ContentContainer>
       <div>
         <button type="button" onClick={() => setIsFilter(!isFilter)}>
-          Search
+          <IoIosSearch />
         </button>
         {isFilter && (
           <div>
@@ -41,7 +43,9 @@ function Header() {
             </button>
           </div>
         )}
-        <button type="button">Profile</button>
+        <button type="button">
+          <VscAccount />
+        </button>
         <button type="button">Cart</button>
       </div>
     </Container>
