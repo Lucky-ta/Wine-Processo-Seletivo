@@ -3,7 +3,7 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Header from '../../../src/components/Header';
 
 describe('Test Header Component', () => {
@@ -24,5 +24,16 @@ describe('Test Header Component', () => {
 
     const wineLogo = screen.getByAltText(/wine-logo/i);
     expect(wineLogo).toBeInTheDocument();
+  });
+
+  it('Check if search input is visible after click on Search button', () => {
+    render(<Header />);
+
+    const searchButton = screen.getByText(/Search/i);
+    fireEvent.click(searchButton);
+    const searchInput = screen.getByPlaceholderText(/VINHO/i);
+
+    expect(searchButton).toBeInTheDocument();
+    expect(searchInput).toBeInTheDocument();
   });
 });
