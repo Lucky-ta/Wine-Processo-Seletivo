@@ -3,10 +3,11 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import React, { useContext } from 'react';
 import Header from '../components/Header/Header';
 import Pagination from '../components/Pagination';
-import ProductCards from '../components/ProductCards';
+import ProductCards from '../components/ProductCard/ProductCards';
 import SearchLeftBar from '../components/LeftFilter/SearchLeftBar';
 import MyContext from '../contexts/MyContext';
 import { IApiResponse, Item } from '../interfaces/IApiResponse';
+import { Container, ProductsContainer } from '../components/ProductCard/index';
 
 function Store({ items }: IApiResponse) {
   const { filteredProducts } = useContext<any>(MyContext);
@@ -14,10 +15,16 @@ function Store({ items }: IApiResponse) {
   return (
     <div>
       <Header />
-      <SearchLeftBar />
-      {filteredProducts !== null
-        ? filteredProducts.map((i: Item) => <ProductCards key={i.id} item={i} />)
-        : items.map((i) => <ProductCards key={i.id} item={i} />)}
+      <Container>
+        <SearchLeftBar />
+        <ProductsContainer>
+          {filteredProducts !== null
+            ? filteredProducts.map((i: Item) => (
+              <ProductCards key={i.id} item={i} />
+            ))
+            : items.map((i) => <ProductCards key={i.id} item={i} />)}
+        </ProductsContainer>
+      </Container>
       <Pagination />
     </div>
   );

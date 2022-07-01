@@ -1,7 +1,20 @@
 import React, { useContext } from 'react';
-import MyContext from '../contexts/MyContext';
-import { Cart } from '../interfaces/IApiResponse';
-import formatPrice from '../services/formatFunctions/formatPrice';
+import MyContext from '../../contexts/MyContext';
+import { Cart } from '../../interfaces/IApiResponse';
+import formatPrice from '../../services/formatFunctions/formatPrice';
+import {
+  CardContainer,
+  Image,
+  AddItemButton,
+  ItemName,
+  DiscountPrice,
+  Discount,
+  Member,
+  MemberPrice,
+  RS,
+  NotMember,
+  SideToSideSpansContainer,
+} from '.';
 
 function ProductCards({ item }: any) {
   const { cart } = useContext<any>(MyContext);
@@ -35,14 +48,23 @@ function ProductCards({ item }: any) {
 
   return (
     <div>
-      <img src={item.image} alt="" />
-      <h2>{item.name}</h2>
-      <p>{`${item.price}, ${item.discount}`}</p>
-      <p>{`SÓCIO WINE R$${item.priceMember}`}</p>
-      <p>{`Nao socio, ${item.price}`}</p>
-      <button onClick={handleAddItemToCart} type="button">
+      <CardContainer>
+        <Image src={item.image} alt="" />
+        <ItemName>{item.name}</ItemName>
+        <SideToSideSpansContainer>
+          <DiscountPrice>{item.price}</DiscountPrice>
+          <Discount>{`${item.discount}% OFF`}</Discount>
+        </SideToSideSpansContainer>
+        <SideToSideSpansContainer>
+          <Member>SÓCIO WINE</Member>
+          <RS>R$ </RS>
+          <MemberPrice>{item.priceMember}</MemberPrice>
+        </SideToSideSpansContainer>
+        <NotMember>{`Nao socio, ${item.price}`}</NotMember>
+      </CardContainer>
+      <AddItemButton onClick={handleAddItemToCart} type="button">
         ADICIONAR
-      </button>
+      </AddItemButton>
     </div>
   );
 }

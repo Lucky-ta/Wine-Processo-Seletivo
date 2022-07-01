@@ -9,6 +9,9 @@ export const Container = styled.div`
     gap: 2em;
     font-family: 'Lato', sans-serif;
     color: #333333;;
+    position: fixed;
+    left: 6.7em;
+    top: 4.3em;
 `;
 
 export const FilterContainer = styled.div`

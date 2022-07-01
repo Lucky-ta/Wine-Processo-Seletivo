@@ -9,6 +9,8 @@ export const Container = styled.div`
     font-family: 'Neo Sans Std', sans-serif;
     background-color: #FFFFFF;
     color: grey;
+    position: fixed;
+    top: 0;
 `;
 
 export const ContentContainer = styled.div`
