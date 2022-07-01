@@ -18,4 +18,11 @@ describe('Test Header Component', () => {
     expect(profileButton).toBeInTheDocument();
     expect(cartButton).toBeInTheDocument();
   });
+
+  it('Wine Logo must be in screen', () => {
+    render(<Header />);
+
+    const wineLogo = screen.getByAltText(/wine-logo/i);
+    expect(wineLogo).toBeInTheDocument();
+  });
 });
