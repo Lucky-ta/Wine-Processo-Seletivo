@@ -9,8 +9,8 @@ import ProductCards from '../components/ProductCards';
 import SearchLeftBar from '../components/SearchLeftBar';
 import MyContext from '../contexts/MyContext';
 
-function Store({ items }) {
-  const { products, filteredProducts } = useContext<any>(MyContext);
+function Store({ items }: any) {
+  const { filteredProducts } = useContext<any>(MyContext);
 
   return (
     <div>
