@@ -1,8 +1,6 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 import React, { useEffect, useState } from 'react';
-import MyContext from '../contexts/MyContext';
+import MyContext from './MyContext';
 import fetchProducts from '../services/fetchProducts';
 
 interface IProps {

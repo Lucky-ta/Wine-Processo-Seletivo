@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 import React, { useContext } from 'react';
 import MyContext from '../contexts/MyContext';
 import { Cart } from '../interfaces/IApiResponse';

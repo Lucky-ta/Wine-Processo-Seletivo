@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import type { AppProps } from 'next/app';

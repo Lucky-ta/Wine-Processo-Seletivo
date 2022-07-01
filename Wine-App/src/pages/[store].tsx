@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 import axios from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React, { useContext } from 'react';

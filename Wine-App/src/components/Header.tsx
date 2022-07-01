@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 import React, { useContext, useState } from 'react';
 import MyContext from '../contexts/MyContext';
 
