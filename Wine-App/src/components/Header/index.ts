@@ -4,15 +4,20 @@ export const Container = styled.div`
     display: flex;
     border: 0.5px solid #CCCCCC;
     width: 100%;
-    height: 4.8em;
+    height: 10%;
     align-items: center;
     font-family: 'Neo Sans Std', sans-serif;
     background-color: #FFFFFF;
     color: grey;
     position: fixed;
     top: 0;
-    /* margin-right: 2em; */
     justify-content: space-evenly;
+
+    transition: left 4s;
+    
+    .menu{
+        display: none;
+    }
 
     @media(max-width: 970px) {
         justify-content: space-around;
@@ -21,6 +26,7 @@ export const Container = styled.div`
     }
 
     .menu {
+        display: block;
         padding-left: 2em;
     }
 

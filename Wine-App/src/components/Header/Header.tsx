@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { VscAccount } from 'react-icons/vsc';
 import { GiBeachBag } from 'react-icons/gi';
 import { GrMenu } from 'react-icons/gr';
 import MyContext from '../../contexts/MyContext';
+import OptionModal from './modals/OptionModal';
+
 import {
   Container,
   ContentContainer,
@@ -15,10 +17,13 @@ import {
 
 function Header() {
   const { toggle, setToggle } = useContext<any>(MyContext);
-
+  const [isModalActive, setIsModalActive] = useState(false);
   return (
     <Container>
-      <Button className="menu"><GrMenu size="2.5em" /></Button>
+      <Button onClick={() => setIsModalActive(!isModalActive)} className="menu">
+        <GrMenu size="2.5em" />
+      </Button>
+      { isModalActive && <OptionModal /> }
       <Image
         src="https://centraldeajuda.wine.com.br/static/media/LogoWine.dc8aad50.svg"
         alt="wine-logo"
@@ -32,10 +37,18 @@ function Header() {
         <span>Eventos</span>
       </ContentContainer>
       <ButtonsContainer>
-        <Button data-testid="searchButton" type="button" onClick={() => setToggle(!toggle)}>
+        <Button
+          data-testid="searchButton"
+          type="button"
+          onClick={() => setToggle(!toggle)}
+        >
           <IoIosSearch size="3em" />
         </Button>
-        <Button data-testid="profileButton" className="profileBtn" type="button">
+        <Button
+          data-testid="profileButton"
+          className="profileBtn"
+          type="button"
+        >
           <VscAccount size="2.8em" />
         </Button>
         <Button data-testid="cartButton" type="button">
