@@ -52,6 +52,10 @@ export const AddItemButton = styled.button`
     border-radius: 3.89354px;
     margin-top: 1em;
     box-shadow: 0px 0.973384px 1.94677px rgba(0, 0, 0, 0.2);
+    &:active {
+            transform: scale(0.98);
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        }
 `;
 
 export const ItemName = styled.h3`
