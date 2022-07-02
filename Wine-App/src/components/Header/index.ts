@@ -11,22 +11,20 @@ export const Container = styled.div`
     color: grey;
     position: fixed;
     top: 0;
-    margin-right: 2em;
+    /* margin-right: 2em; */
     justify-content: space-evenly;
 
     @media(max-width: 970px) {
-        justify-content: initial;
+        justify-content: space-around;
     .profileBtn, .content {
         display: none;
     }
 
     .menu {
         padding-left: 2em;
-        padding-right: 5em;
     }
 
     .image {
-        padding-right: 16em;
     }
 
     }`;
