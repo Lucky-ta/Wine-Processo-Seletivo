@@ -10,13 +10,14 @@ export const ProductsContainer = styled.div`
     gap: 2em;
     text-align: center;
     margin-top: 4em;
-
-    margin-right: 4em;
     font-family: 'Lato', sans-serif;
+    width: 100%;
+    margin-right: 6em;
 
-    @media(max-width: 690px) {
-    margin-left: 4em;
-    margin-right: 4em;
+    @media(max-width: 1050px) {
+        margin-right: 6em;
+        margin-left: 6em;
+
 
   }
 `;

@@ -7,9 +7,8 @@ export const Container = styled.div`
     gap: 2em;
     font-family: 'Lato', sans-serif;
     color: #333333;;
-    margin-left: 6em;
-
-    @media(max-width: 690px) {
+    padding-left: 2em;
+    @media(max-width: 1050px) {
     display: none;
   }
 
@@ -25,6 +24,7 @@ export const FilterTitle = styled.h3`
     color: #000000;
     font-weight: 700;
     font-size: 1.3em;
+    
 `;
 
 export const RadioInput = styled.input`

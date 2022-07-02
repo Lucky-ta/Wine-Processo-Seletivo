@@ -11,11 +11,10 @@ export const Container = styled.div`
     color: grey;
     position: fixed;
     top: 0;
-    padding-left: 2em;
-    padding-right: 2em;
-
+    margin-right: 2em;
+    justify-content: space-evenly;
     .profileBtn {
-        @media(max-width: 690px) {
+        @media(max-width: 970px) {
         display: none;
   }
     }
@@ -23,20 +22,19 @@ export const Container = styled.div`
 
 export const ContentContainer = styled.div`
     display: flex;
-    margin-left: 0;
-    gap: 2em;
+    width: 40%;
+    margin-left: 2em;
+    justify-content: space-around;
 `;
 
 export const Image = styled.img`
-    padding-left: 4em;
-    margin-right: 5em;
-
 `;
 
 export const ButtonsContainer = styled.div`
     display: flex;
-    gap: 3em;
-    margin: auto;
+    width: 25%;
+    margin-left: 6em;
+    justify-content: space-around;
 `;
 
 export const Button = styled.button`

@@ -10,9 +10,7 @@ const StyledPaginateContainer = styled.div`
     width: 100%;
     padding-top: 2.3em;
     padding-bottom: 1.3em;
-    /* margin: auto; */
     justify-content: center;
-    
 
   }
 
