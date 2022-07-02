@@ -21,6 +21,11 @@ export const ProductsContainer = styled.div`
         margin-right: 6em;
         margin-left: 6em;
   }
+
+  @media(max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 30em;
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -110,7 +115,8 @@ export const ShowMoreButton = styled.button`
         height: 3em;
         color:  #B6116E;
         transition: 0.2s all;
-        
+        max-width: 30em;
+        margin: auto;
         margin-top: 2em;
         margin-bottom: 2em;
         &:hover {
