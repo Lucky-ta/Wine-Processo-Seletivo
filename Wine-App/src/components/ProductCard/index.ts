@@ -98,3 +98,32 @@ export const NotMember = styled.p`
 export const SideToSideSpansContainer = styled.div`
     padding-top: 0.6em;
 `;
+
+export const ShowMoreButton = styled.button`
+    display: none;
+    @media(max-width: 800px) {
+        display: block;
+        background: none;
+        border: 2px solid #B6116E;
+        width: 100%;
+        height: 3em;
+        color:  #B6116E;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        transition: 0.2s all;
+        
+
+        &:hover {
+            background-color: #B6116E;
+            color: white;
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: white;
+            color: #B6116E;
+            transform: scale(0.98);
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        }
+  }
+`;

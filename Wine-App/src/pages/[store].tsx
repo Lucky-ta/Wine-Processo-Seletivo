@@ -7,7 +7,7 @@ import ProductCards from '../components/ProductCard/ProductCards';
 import SearchLeftBar from '../components/LeftFilter/SearchLeftBar';
 import MyContext from '../contexts/MyContext';
 import { IApiResponse, Item } from '../interfaces/IApiResponse';
-import { GlobalContainer, ProductsContainer } from '../components/ProductCard/index';
+import { GlobalContainer, ProductsContainer, ShowMoreButton } from '../components/ProductCard/index';
 import FilterInput from '../components/FilterInput/FilterInput';
 import MainContentContainer from '../../styles/Containers';
 
@@ -29,6 +29,7 @@ function Store({ items }: IApiResponse) {
         </ProductsContainer>
       </MainContentContainer>
       <Pagination />
+      <ShowMoreButton>MOSTRAR MAIS</ShowMoreButton>
     </GlobalContainer>
   );
 }
