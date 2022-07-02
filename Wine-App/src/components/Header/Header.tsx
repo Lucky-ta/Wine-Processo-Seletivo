@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { VscAccount } from 'react-icons/vsc';
 import { GiBeachBag } from 'react-icons/gi';
@@ -10,20 +10,10 @@ import {
   ButtonsContainer,
   Button,
   SwitchPageButton,
-  SearchInputContainer,
-  SearchInput,
-  SearchButton,
 } from '.';
 
 function Header() {
-  const [isFilter, setIsFilter] = useState(false);
-  const [item, setItem] = useState('');
-  const { products, setFilteredProducts } = useContext<any>(MyContext);
-
-  const handlerFilterByName = () => {
-    const filteredProduct = products.filter(({ name }) => name.includes(item));
-    setFilteredProducts(filteredProduct);
-  };
+  const { toggle, setToggle } = useContext<any>(MyContext);
 
   return (
     <Container>
@@ -39,10 +29,9 @@ function Header() {
         <span>Eventos</span>
       </ContentContainer>
       <ButtonsContainer>
-        <Button type="button" onClick={() => setIsFilter(!isFilter)}>
+        <Button type="button" onClick={() => setToggle(!toggle)}>
           <IoIosSearch size="3em" />
         </Button>
-        
         <Button className="profileBtn" type="button">
           <VscAccount size="2.8em" />
         </Button>

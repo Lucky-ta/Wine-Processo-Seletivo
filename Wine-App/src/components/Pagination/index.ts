@@ -8,15 +8,12 @@ const StyledPaginateContainer = styled.div`
     align-items: center;
     list-style-type: none;
     width: 100%;
-    max-width: 30em;
-    margin-top: 2.3em;
-    margin-bottom: 1.3em;
-    margin-left: 60vh;
+    padding-top: 2.3em;
+    padding-bottom: 1.3em;
+    /* margin: auto; */
+    justify-content: center;
     
-    @media(max-width: 690px) {
-      margin: auto;
-      margin-top: 2.4em;
-  }
+
   }
 
   .prev, .next {
@@ -29,6 +26,7 @@ const StyledPaginateContainer = styled.div`
     width: 100%;
     font-size: 1.4em;
     text-align: center;
+    max-width: 4em;
     &:hover {
       cursor: pointer;
       background-color: white;

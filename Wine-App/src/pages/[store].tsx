@@ -8,6 +8,8 @@ import SearchLeftBar from '../components/LeftFilter/SearchLeftBar';
 import MyContext from '../contexts/MyContext';
 import { IApiResponse, Item } from '../interfaces/IApiResponse';
 import { GlobalContainer, ProductsContainer } from '../components/ProductCard/index';
+import FilterInput from '../components/FilterInput/FilterInput';
+import { MainContentContainer } from '../../styles/Containers';
 
 function Store({ items }: IApiResponse) {
   const { filteredProducts } = useContext<any>(MyContext);
@@ -15,14 +17,17 @@ function Store({ items }: IApiResponse) {
   return (
     <GlobalContainer>
       <Header />
-      <SearchLeftBar />
-      <ProductsContainer>
-        {filteredProducts !== null
-          ? filteredProducts.map((i: Item) => (
-            <ProductCards key={i.id} item={i} />
-          ))
-          : items.map((i) => <ProductCards key={i.id} item={i} />)}
-      </ProductsContainer>
+      <FilterInput />
+      <MainContentContainer>
+        <SearchLeftBar />
+        <ProductsContainer>
+          {filteredProducts !== null
+            ? filteredProducts.map((i: Item) => (
+              <ProductCards key={i.id} item={i} />
+            ))
+            : items.map((i) => <ProductCards key={i.id} item={i} />)}
+        </ProductsContainer>
+      </MainContentContainer>
       <Pagination />
     </GlobalContainer>
   );

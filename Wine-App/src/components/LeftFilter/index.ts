@@ -7,8 +7,7 @@ export const Container = styled.div`
     gap: 2em;
     font-family: 'Lato', sans-serif;
     color: #333333;;
-    margin-top: 8em;
-    margin-left: 4em;
+    margin-left: 6em;
 
     @media(max-width: 690px) {
     display: none;

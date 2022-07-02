@@ -55,6 +55,12 @@ export const SearchInput = styled.input`
     border-color: black;
     border-radius: 3em;
     padding: 5px;
+    width: 15em;
+    transition: all 0.5s;
+    
+    &:focus{
+        width: 25em;
+    }
 `;
 
 export const SearchButton = styled.button`
