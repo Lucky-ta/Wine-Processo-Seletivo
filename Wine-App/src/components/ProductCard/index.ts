@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const GlobalContainer = styled.div`
-
+    width: 100%;
+    height: 100%;
 `;
 
 export const ProductsContainer = styled.div`
@@ -108,11 +109,10 @@ export const ShowMoreButton = styled.button`
         width: 100%;
         height: 3em;
         color:  #B6116E;
-        margin-top: 2em;
-        margin-bottom: 2em;
         transition: 0.2s all;
         
-
+        margin-top: 2em;
+        margin-bottom: 2em;
         &:hover {
             background-color: #B6116E;
             color: white;
