@@ -12,13 +12,13 @@ export const ProductsContainer = styled.div`
     margin-top: 4em;
     font-family: 'Lato', sans-serif;
     width: 100%;
-    margin-right: 6em;
+    margin-right: 8em;
+    max-width: 65%;
 
     @media(max-width: 1050px) {
+        max-width: 100%;
         margin-right: 6em;
         margin-left: 6em;
-
-
   }
 `;
 

@@ -12,6 +12,10 @@ const StyledPaginateContainer = styled.div`
     padding-bottom: 1.3em;
     justify-content: center;
 
+    @media(max-width:800px) {
+      display: none;
+  }
+
   }
 
   .prev, .next {
