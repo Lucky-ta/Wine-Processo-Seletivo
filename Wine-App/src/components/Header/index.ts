@@ -13,12 +13,23 @@ export const Container = styled.div`
     top: 0;
     margin-right: 2em;
     justify-content: space-evenly;
-    .profileBtn {
-        @media(max-width: 970px) {
+
+    @media(max-width: 970px) {
+        justify-content: initial;
+    .profileBtn, .content {
         display: none;
-  }
     }
-`;
+
+    .menu {
+        padding-left: 2em;
+        padding-right: 5em;
+    }
+
+    .image {
+        padding-right: 16em;
+    }
+
+    }`;
 
 export const ContentContainer = styled.div`
     display: flex;
@@ -34,7 +45,7 @@ export const ButtonsContainer = styled.div`
     display: flex;
     width: 25%;
     margin-left: 6em;
-    justify-content: space-around;
+    justify-content: space-evenly;
 `;
 
 export const Button = styled.button`

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { VscAccount } from 'react-icons/vsc';
 import { GiBeachBag } from 'react-icons/gi';
+import { GrMenu } from 'react-icons/gr';
 import MyContext from '../../contexts/MyContext';
 import {
   Container,
@@ -17,11 +18,13 @@ function Header() {
 
   return (
     <Container>
+      <Button className="menu"><GrMenu size="2.5em" /></Button>
       <Image
         src="https://centraldeajuda.wine.com.br/static/media/LogoWine.dc8aad50.svg"
         alt="wine-logo"
+        className="image"
       />
-      <ContentContainer>
+      <ContentContainer className="content">
         <span>Clube</span>
         <SwitchPageButton>Loja</SwitchPageButton>
         <span>Produtores</span>
