@@ -13,14 +13,10 @@ describe('Test Product Cards Component', () => {
 
     const imageComponent = screen.getByRole('img');
     const h2Component = screen.getByRole('heading');
-    const firstParagraph = screen.getByText(`${mockItem.price}, ${mockItem.discount}`);
-    const secondParagraph = screen.getByText(`SÓCIO WINE R$${mockItem.priceMember}`);
-    const thirdParagraph = screen.getByText(`Nao socio, ${mockItem.price}`);
+    const firstParagraph = screen.getByText(`${mockItem.discount}% OFF`);
 
     expect(imageComponent).toBeInTheDocument();
     expect(h2Component).toBeInTheDocument();
     expect(firstParagraph).toBeInTheDocument();
-    expect(secondParagraph).toBeInTheDocument();
-    expect(thirdParagraph).toBeInTheDocument();
   });
 });

@@ -32,13 +32,13 @@ function Header() {
         <span>Eventos</span>
       </ContentContainer>
       <ButtonsContainer>
-        <Button type="button" onClick={() => setToggle(!toggle)}>
+        <Button data-testid="searchButton" type="button" onClick={() => setToggle(!toggle)}>
           <IoIosSearch size="3em" />
         </Button>
-        <Button className="profileBtn" type="button">
+        <Button data-testid="profileButton" className="profileBtn" type="button">
           <VscAccount size="2.8em" />
         </Button>
-        <Button type="button">
+        <Button data-testid="cartButton" type="button">
           <GiBeachBag size="2.8em" />
         </Button>
       </ButtonsContainer>
