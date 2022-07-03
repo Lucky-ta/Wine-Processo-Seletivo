@@ -1,15 +1,25 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Router from 'next/router';
 import React from 'react';
+import { IoIosArrowBack } from 'react-icons/io';
 import FilterInput from '../../components/FilterInput/FilterInput';
 import Header from '../../components/Header/Header';
-import { Container } from '../../components/ProductDetailsCard';
+import { ArrowButton, Container } from '../../components/ProductDetailsCard';
 import ProductDetailsCard from '../../components/ProductDetailsCard/ProductDetailsCard';
 import fetchProducts from '../../services/fetchProducts';
 
 function ProductDetails(props: any) {
+  const returnMainPage = () => {
+    Router.push('/1');
+  };
+
   return (
     <Container>
       <Header />
+      <ArrowButton onClick={returnMainPage} type="button">
+        <IoIosArrowBack size="2.8em" />
+        Voltar
+      </ArrowButton>
       <FilterInput />
       <ProductDetailsCard item={props} />
     </Container>

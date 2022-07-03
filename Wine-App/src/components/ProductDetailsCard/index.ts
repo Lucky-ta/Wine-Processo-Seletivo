@@ -109,3 +109,17 @@ export const AddItemButton = styled.button`
         color: #C81A78;
     }
 `;
+
+export const ArrowButton = styled.button`
+    display: flex;
+    position: absolute;
+    top: 6em;
+    left: 2em;
+    background: none;
+    border: none;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.2em;
+    color: #111111;
+    z-index: -1;
+`;
