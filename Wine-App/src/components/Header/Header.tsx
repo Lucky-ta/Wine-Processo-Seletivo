@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { GrMenu } from 'react-icons/gr';
+import { useRouter } from 'next/router';
 import CartSvg from '../../../public/svg/Bitmap.svg';
 import ProfileSvg from '../../../public/svg/conta.svg';
 import SearchSvg from '../../../public/svg/Busca.svg';
@@ -19,6 +20,7 @@ import {
 import CartModal from './cartModal/CartModal';
 
 function Header() {
+  const router = useRouter();
   const { toggle, setToggle } = useContext<any>(MyContext);
   const [cartModel, SetCartModel] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
@@ -33,7 +35,7 @@ function Header() {
         <GrMenu size="2.5em" />
       </Button>
       {isModalActive && <OptionModal />}
-      <Image src={LogoSvg.src} alt="wine-logo" className="image" />
+      <Image onClick={() => router.push('/1')} src={LogoSvg.src} alt="wine-logo" className="image" />
       <ContentContainer className="content">
         <span>Clube</span>
         <SwitchPageButton>Loja</SwitchPageButton>
