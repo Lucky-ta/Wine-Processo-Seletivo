@@ -44,6 +44,8 @@ const MainContentContainer = styled.div`
     height: 26em;
   }
     }
+    z-index: 2;
+
 `;
 
 export default MainContentContainer;

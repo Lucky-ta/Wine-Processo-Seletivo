@@ -4,6 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    width: 15em;
     gap: 2em;
     font-family: 'Lato', sans-serif;
     color: #333333;;
