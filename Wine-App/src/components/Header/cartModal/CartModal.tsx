@@ -10,7 +10,7 @@ interface ICartModelProps {
 }
 
 function CartModal({ modelStatus }: ICartModelProps) {
-  const { cart } = useContext<any>(MyContext);
+  const { cart } = useContext(MyContext);
 
   return (
     <Container>

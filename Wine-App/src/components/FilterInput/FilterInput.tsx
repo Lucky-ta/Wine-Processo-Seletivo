@@ -5,7 +5,6 @@ import Container from '.';
 
 function FilterInput() {
   const [items, setItems] = useState('');
-
   const { toggle, products, setFilteredProducts } = useContext<any>(MyContext);
 
   const handlerFilterByName = () => {
@@ -28,7 +27,6 @@ function FilterInput() {
             placeholder="Bacalhôa Quinta.."
             onChange={(e) => setItems(e.target.value)}
           />
-
         </SearchInputContainer>
       )}
     </Container>
