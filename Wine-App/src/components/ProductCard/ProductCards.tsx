@@ -38,14 +38,6 @@ function ProductCards({ item }: any) {
     if (!verifyEqualItems) {
       cart.push(cartShape);
       localStorage.setItem('WineCart', JSON.stringify(cart));
-    } else {
-      const equalItem = cart.find(({ id }) => id === cartShape.id);
-      equalItem.quantity += 1;
-      equalItem.totalPrice = formatPrice(equalItem.price * equalItem.quantity);
-      equalItem.totalMemberPrice = formatPrice(
-        equalItem.priceMember * equalItem.quantity,
-      );
-      localStorage.setItem('WineCart', JSON.stringify(cart));
     }
   };
 
