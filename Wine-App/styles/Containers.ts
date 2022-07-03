@@ -40,7 +40,7 @@ const MainContentContainer = styled.div`
 
     @media(max-width: 550px) {
     grid-template-columns: 1fr;
-    width: 100%;
+    width: 18em;
     height: 26em;
   }
     }

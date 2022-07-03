@@ -35,6 +35,8 @@ export const Container = styled.div`
 
     .image {
     }
+
+
 }`;
 
 export const ContentContainer = styled.div`
@@ -52,6 +54,11 @@ export const ButtonsContainer = styled.div`
     width: 25%;
     margin-left: 6em;
     justify-content: space-evenly;
+
+    @media(max-width: 550px) {
+        justify-content: space-around;
+        margin-left: 1em;
+  }
 `;
 
 export const Button = styled.button<props>`
@@ -93,6 +100,11 @@ export const SearchInput = styled.input`
         width: 25em;
     }
 
+    @media(max-width: 550px) {
+        &:focus, &:hover{
+        width: 15em;
+    }
+  }
 `;
 
 export const SearchButton = styled.button`
