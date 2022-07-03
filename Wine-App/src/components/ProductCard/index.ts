@@ -16,8 +16,10 @@ export const ProductsContainer = styled.div`
     gap: 2em;
     text-align: center;
     margin-top: 4em;
+    margin-left: 10em;
     font-family: 'Lato', sans-serif;
     justify-content: center;
+
 
     @media(max-width: 1050px) {
         max-width: 100%;
@@ -38,7 +40,6 @@ export const CardContainer = styled.div`
     box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
     width: 15em;
     color: #1D1D1B;
-    
     transition: all 2s linear;
 `;
 

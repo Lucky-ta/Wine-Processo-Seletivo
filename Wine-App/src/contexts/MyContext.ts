@@ -10,8 +10,6 @@ export type ContextFunc = {
     setCart: () => void,
     toggle: boolean,
     setToggle: () => void;
-    loading: boolean;
-    setLoading: () => void;
 }
 
 const MyContext = createContext<ContextFunc | boolean>(!!null);
