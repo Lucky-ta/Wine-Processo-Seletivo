@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface props {
+    page: string
+}
 
 export const Container = styled.div`
     display: flex;
@@ -52,10 +56,15 @@ export const ButtonsContainer = styled.div`
     justify-content: space-evenly;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<props>`
     background: none;
     border: none;
     color: grey;
+
+    ${({ page }) => page === 'details' && css`
+        color: white;
+        height: 3em
+    `}
 `;
 
 export const SwitchPageButton = styled.span`

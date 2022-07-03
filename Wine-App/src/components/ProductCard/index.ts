@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+interface props {
+    page: string
+}
+
 export const GlobalContainer = styled.div`
     width: 100%;
     height: 100%;
@@ -35,10 +39,6 @@ export const CardContainer = styled.div`
     color: #1D1D1B;
 `;
 
-interface props {
-    page: string
-}
-
 export const Image = styled.img<props>`
     width: 100%;
     height: 100%;
@@ -48,12 +48,12 @@ export const Image = styled.img<props>`
     ${({ page }) => page === 'details' && css`
     object-fit: none;
     max-height: none;
-    max-width: 30em;
-
+    max-width: 40em;
+    max-height: 40em;
     `}
 `;
 
-export const AddItemButton = styled.button`
+export const AddItemButton = styled.button<props>`
     border: none;
     background-color: #7EBC43;
     color: white;
@@ -66,14 +66,30 @@ export const AddItemButton = styled.button`
             transform: scale(0.98);
             box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
         }
+
+    ${({ page }) => page === 'details' && css`
+        display: flex;
+        align-items: center;
+        height: 4em;
+        max-width: 25em;
+        justify-content: space-evenly;
+    `}
 `;
 
-export const ItemName = styled.h3`
+export const ItemName = styled.h3<props>`
     font-size: 1em;
     font-weight: 700;
     font-style: normal;
     letter-spacing: -0.222488px;
     padding: 0.5em;
+
+    ${({ page }) => page === 'details' && css`
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    color: #111111;
+    padding-bottom: 0.3em;
+    `}
 `;
 
 export const DiscountPrice = styled.span`
@@ -96,23 +112,46 @@ export const Member = styled.span`
     font-weight: 700;
     font-size: 0.8em;
     padding: 0.5em;
+
+
 `;
 
-export const MemberPrice = styled.span`
+export const MemberPrice = styled.span<props>`
     color: #B6116E;
     font-weight: 700;
     font-size: 1.3em;
+
+    ${({ page }) => page === 'details' && css`
+    margin: 0;
+    padding: 0;
+    font-size: 2.7em;
+    `}
 `;
 
-export const RS = styled.span`
+export const RS = styled.span<props>`
     color: #B6116E;
     font-size: 0.8em;
+
+    ${({ page }) => page === 'details' && css`
+    margin: 0;
+    padding: 0;
+    font-size: 1.7em;
+    font-weight: 800;
+    `}
 `;
 
-export const NotMember = styled.p`
+export const NotMember = styled.p<props>`
     color:  #888888;
     padding: 1em;
     font-size: 0.8em;
+
+    ${({ page }) => page === 'details' && css`
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2.2em;
+    font-size: 1em;
+    font-weight: 700;
+    `}
 `;
 
 export const SideToSideSpansContainer = styled.div`

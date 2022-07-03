@@ -20,10 +20,14 @@ function Header() {
   const [isModalActive, setIsModalActive] = useState(false);
   return (
     <Container>
-      <Button onClick={() => setIsModalActive(!isModalActive)} className="menu">
+      <Button
+        page="main"
+        onClick={() => setIsModalActive(!isModalActive)}
+        className="menu"
+      >
         <GrMenu size="2.5em" />
       </Button>
-      { isModalActive && <OptionModal /> }
+      {isModalActive && <OptionModal />}
       <Image
         src="https://centraldeajuda.wine.com.br/static/media/LogoWine.dc8aad50.svg"
         alt="wine-logo"
@@ -38,6 +42,7 @@ function Header() {
       </ContentContainer>
       <ButtonsContainer>
         <Button
+          page="main"
           data-testid="searchButton"
           type="button"
           onClick={() => setToggle(!toggle)}
@@ -45,13 +50,14 @@ function Header() {
           <IoIosSearch size="3em" />
         </Button>
         <Button
+          page="main"
           data-testid="profileButton"
           className="profileBtn"
           type="button"
         >
           <VscAccount size="2.8em" />
         </Button>
-        <Button data-testid="cartButton" type="button">
+        <Button page="main" data-testid="cartButton" type="button">
           <GiBeachBag size="2.8em" />
         </Button>
       </ButtonsContainer>

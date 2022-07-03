@@ -57,19 +57,19 @@ function ProductCards({ item }: any) {
     <div>
       <CardContainer onClick={redirectProductDetails}>
         <Image page="main" src={item.image} alt="" />
-        <ItemName>{item.name}</ItemName>
+        <ItemName page="main">{item.name}</ItemName>
         <SideToSideSpansContainer>
           <DiscountPrice>{item.price}</DiscountPrice>
           <Discount>{`${item.discount}% OFF`}</Discount>
         </SideToSideSpansContainer>
         <SideToSideSpansContainer>
           <Member>SÓCIO WINE</Member>
-          <RS>R$ </RS>
-          <MemberPrice>{item.priceMember}</MemberPrice>
+          <RS page="main">R$ </RS>
+          <MemberPrice page="main">{item.priceMember}</MemberPrice>
         </SideToSideSpansContainer>
-        <NotMember>{`NÃO SÓCIO, ${item.price}`}</NotMember>
+        <NotMember page="main">{`NÃO SÓCIO, ${item.price}`}</NotMember>
       </CardContainer>
-      <AddItemButton onClick={handleAddItemToCart} type="button">
+      <AddItemButton page="main" onClick={handleAddItemToCart} type="button">
         ADICIONAR
       </AddItemButton>
     </div>
