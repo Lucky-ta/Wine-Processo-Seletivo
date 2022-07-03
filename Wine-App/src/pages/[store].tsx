@@ -14,10 +14,9 @@ import {
 } from '../components/ProductCard/index';
 import FilterInput from '../components/FilterInput/FilterInput';
 import MainContentContainer from '../../styles/Containers';
-import Loading from '../components/Loading/Loading';
 
 function Store({ items }: IApiResponse) {
-  const { filteredProducts, loading } = useContext<any>(MyContext);
+  const { filteredProducts } = useContext<any>(MyContext);
   const [visible, setVisible] = useState(10);
 
   const props = {
@@ -29,7 +28,6 @@ function Store({ items }: IApiResponse) {
   };
   return (
     <GlobalContainer>
-      { loading && <Loading /> }
       <Header />
       <FilterInput />
       <MainContentContainer>

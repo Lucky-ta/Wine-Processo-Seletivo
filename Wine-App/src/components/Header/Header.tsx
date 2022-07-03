@@ -18,6 +18,7 @@ import {
   SvgImage,
 } from '.';
 import CartModal from './cartModal/CartModal';
+import GreyBackground from '../GreyBackground/GreyBackground';
 
 function Header() {
   const router = useRouter();
@@ -26,6 +27,7 @@ function Header() {
   const [isModalActive, setIsModalActive] = useState(false);
   return (
     <Container>
+      { (cartModel || isModalActive) && <GreyBackground /> }
       <Button
         type="button"
         page="main"

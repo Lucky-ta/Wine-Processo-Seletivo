@@ -11,7 +11,7 @@ function MyProvider({ children }: IProps) {
   const [toggle, setToggle] = useState(false);
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState(null);
 
   const datas: any = {
