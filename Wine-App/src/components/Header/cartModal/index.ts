@@ -24,8 +24,6 @@ export const Container = styled.div`
     width: 100%;
   }
 }
-
-    /* z-index: 999; */
 `;
 
 export const ModelHeader = styled.div`

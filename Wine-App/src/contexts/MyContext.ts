@@ -12,6 +12,6 @@ export type ContextFunc = {
     setToggle: () => void;
 }
 
-const context = createContext<ContextFunc | boolean>(!!null);
+const MyContext = createContext<ContextFunc | boolean>(!!null);
 
-export default context;
+export default MyContext;

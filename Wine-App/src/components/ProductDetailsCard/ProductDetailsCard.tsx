@@ -4,7 +4,6 @@ import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { Rating } from 'react-simple-star-rating';
 import { Cart } from '../../interfaces/IApiResponse';
 import MyContext from '../../contexts/MyContext';
-import formatPrice from '../../services/formatFunctions/formatPrice';
 import {
   AddItemButtonDiv,
   Image,
@@ -54,9 +53,9 @@ function ProductDetailsCard({ item }: any) {
     }
     const find = cart.find(({ id }) => id === cartShape.id);
 
-    find.totalPrice = formatPrice(cartShape.totalPrice);
-    find.totalMemberPrice = formatPrice(cartShape.totalMemberPrice);
-    find.quantity = formatPrice(cartShape.quantity);
+    find.totalPrice = Number(cartShape.totalPrice.toFixed(2));
+    find.totalMemberPrice = Number(cartShape.totalMemberPrice.toFixed(2));
+    find.quantity = Number(cartShape.quantity.toFixed(2));
     localStorage.setItem('WineCart', JSON.stringify(cart));
   };
 
@@ -98,8 +97,8 @@ function ProductDetailsCard({ item }: any) {
           <Rating style={{ zIndex: '-1' }} size={32} ratingValue={item.avaliations / item.rating} />
         </InfoContainer>
         <RS page="details">R$ </RS>
-        <MemberPrice page="details">{formatPrice(item.priceMember)}</MemberPrice>
-        <NotMember page="details">{`NÃO SÓCIO, ${formatPrice(item.price)}`}</NotMember>
+        <MemberPrice page="details">{item.priceMember}</MemberPrice>
+        <NotMember page="details">{`NÃO SÓCIO, ${item.price}`}</NotMember>
         <SommelierComentContainer>
           <SommelierTitle>Comentário do Sommelier</SommelierTitle>
           <SommelierComment>{item.sommelierComment}</SommelierComment>
