@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledPaginateContainer = styled.div`
-  .container {
+  .container, .isRender {
     display: flex;
     color: #0366d6;
     gap: 2em;
@@ -15,7 +15,11 @@ const StyledPaginateContainer = styled.div`
     @media(max-width:800px) {
       display: none;
   }
+  }
 
+  .isRender {
+    position: absolute;
+    bottom: 0;
   }
 
   .prev, .next {
@@ -29,6 +33,7 @@ const StyledPaginateContainer = styled.div`
     font-size: 1.4em;
     text-align: center;
     max-width: 4em;
+    
     &:hover {
       cursor: pointer;
       background-color: white;

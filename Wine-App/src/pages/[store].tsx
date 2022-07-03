@@ -7,12 +7,20 @@ import ProductCards from '../components/ProductCard/ProductCards';
 import SearchLeftBar from '../components/LeftFilter/SearchLeftBar';
 import MyContext from '../contexts/MyContext';
 import { IApiResponse, Item } from '../interfaces/IApiResponse';
-import { GlobalContainer, ProductsContainer, ShowMoreButton } from '../components/ProductCard/index';
+import {
+  GlobalContainer,
+  ProductsContainer,
+  ShowMoreButton,
+} from '../components/ProductCard/index';
 import FilterInput from '../components/FilterInput/FilterInput';
 import MainContentContainer from '../../styles/Containers';
 
 function Store({ items }: IApiResponse) {
   const { filteredProducts } = useContext<any>(MyContext);
+
+  const props = {
+    isCardsRender: filteredProducts !== null && filteredProducts.length === 0,
+  };
 
   return (
     <GlobalContainer>
@@ -28,7 +36,7 @@ function Store({ items }: IApiResponse) {
             : items.map((i) => <ProductCards key={i.id} item={i} />)}
         </ProductsContainer>
       </MainContentContainer>
-      <Pagination />
+      <Pagination props={props} />
       <ShowMoreButton type="button">MOSTRAR MAIS</ShowMoreButton>
     </GlobalContainer>
   );
