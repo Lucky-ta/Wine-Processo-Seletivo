@@ -32,7 +32,6 @@ import { Button } from '../Header';
 function ProductDetailsCard({ item }: any) {
   const [quantity, setQuantity] = useState(1);
   const { cart } = useContext<any>(MyContext);
-  console.log(item);
 
   const cartShape: Cart = {
     id: item.id,

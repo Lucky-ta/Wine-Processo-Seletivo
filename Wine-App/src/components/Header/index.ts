@@ -91,9 +91,10 @@ export const SearchInput = styled.input`
     padding: 6px;
     width: 15em;
     transition: all 0.5s;
-    &:focus{
+    &:focus, &:hover{
         width: 25em;
     }
+
 `;
 
 export const SearchButton = styled.button`
