@@ -17,9 +17,7 @@ import {
 } from '.';
 
 function ProductCards({ item }: any) {
-  const {
-    cart,
-  } = useContext<any>(MyContext);
+  const { cart } = useContext<any>(MyContext);
   const handleAddItemToCart = () => {
     const cartShape: Cart = {
       id: item.id,

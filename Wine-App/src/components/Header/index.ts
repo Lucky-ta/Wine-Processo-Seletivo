@@ -61,7 +61,7 @@ export const Button = styled.button`
 export const SwitchPageButton = styled.span`
     color:#D14B8F;
     text-decoration: underline 4px;
-    text-underline-offset: 1.7em
+    text-underline-offset: 1em
 `;
 
 export const SearchInput = styled.input`
