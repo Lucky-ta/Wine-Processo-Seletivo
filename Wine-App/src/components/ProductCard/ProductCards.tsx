@@ -60,15 +60,15 @@ function ProductCards({ item }: any) {
         <Image page="main" src={item.image} alt="" />
         <ItemName page="main">{item.name}</ItemName>
         <SideToSideSpansContainer>
-          <DiscountPrice>{item.price}</DiscountPrice>
+          <DiscountPrice>{formatPrice(item.price)}</DiscountPrice>
           <Discount>{`${item.discount}% OFF`}</Discount>
         </SideToSideSpansContainer>
         <SideToSideSpansContainer>
           <Member>SÓCIO WINE</Member>
           <RS page="main">R$ </RS>
-          <MemberPrice page="main">{item.priceMember}</MemberPrice>
+          <MemberPrice page="main">{formatPrice(item.priceMember)}</MemberPrice>
         </SideToSideSpansContainer>
-        <NotMember page="main">{`NÃO SÓCIO, ${item.price}`}</NotMember>
+        <NotMember page="main">{`NÃO SÓCIO, ${formatPrice(item.price)}`}</NotMember>
       </CardContainer>
       <AddItemButtonDiv page="main">
         <AddItemButton onClick={handleAddItemToCart} type="button">
