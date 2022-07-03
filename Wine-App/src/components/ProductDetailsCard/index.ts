@@ -122,6 +122,12 @@ export const AddItemButton = styled.button`
         box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
         color: #C81A78;
     }
+    
+    &:hover {
+        cursor: pointer;
+        color:  #B6116E
+
+    }
 `;
 
 export const ArrowButton = styled.button`

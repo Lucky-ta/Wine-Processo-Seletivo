@@ -49,6 +49,10 @@ export const ContentContainer = styled.div`
 `;
 
 export const Image = styled.img`
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -84,6 +88,11 @@ export const Button = styled.button<props>`
         color: #C81A78;
     }
     `}
+
+    &:hover{
+        cursor: pointer;
+        color:  #B6116E
+    }
 `;
 
 export const SwitchPageButton = styled.span`
