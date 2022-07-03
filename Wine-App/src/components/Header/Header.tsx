@@ -61,7 +61,7 @@ function Header() {
         <Button onClick={() => SetCartModel(!cartModel)} classN="cart" page="main" data-testid="cartButton" type="button">
           <SvgImage classN="cart" src={CartSvg.src} alt="" />
         </Button>
-        { cartModel && <CartModal modelStatus={SetCartModel}/>}
+        { cartModel && <CartModal modelStatus={SetCartModel} />}
       </ButtonsContainer>
     </Container>
   );

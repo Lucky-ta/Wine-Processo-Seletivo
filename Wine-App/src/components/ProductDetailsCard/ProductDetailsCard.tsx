@@ -95,7 +95,7 @@ function ProductDetailsCard({ item }: any) {
           </RegionContainer>
           <p>{item.type}</p>
           <p>{item.volume}</p>
-          <Rating size={32} ratingValue={item.avaliations / item.rating} />
+          <Rating style={{ zIndex: '-1' }} size={32} ratingValue={item.avaliations / item.rating} />
         </InfoContainer>
         <RS page="details">R$ </RS>
         <MemberPrice page="details">{formatPrice(item.priceMember)}</MemberPrice>

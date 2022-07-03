@@ -24,7 +24,8 @@ export const Container = styled.div`
     width: 100%;
   }
 }
-    z-index: 999;
+
+    /* z-index: 999; */
 `;
 
 export const ModelHeader = styled.div`
@@ -37,10 +38,10 @@ export const ModelHeader = styled.div`
     gap: 1.6em;
     color: black;
     font-size: 1.6em;
-`
+`;
 
 export const CartModelContent = styled.div`
 
 padding-top: 5em;
 font-size: 1.8em;
-`
+`;
