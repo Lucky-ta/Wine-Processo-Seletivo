@@ -27,6 +27,7 @@ import {
   AddItemButton,
 } from '.';
 import { Button } from '../Header';
+import formatPrice from '../../services/formatFunctions/formatPrice';
 
 function ProductDetailsCard({ item }: any) {
   const [quantity, setQuantity] = useState(1);
@@ -97,8 +98,8 @@ function ProductDetailsCard({ item }: any) {
           <Rating style={{ zIndex: '-1' }} size={32} ratingValue={item.avaliations / item.rating} />
         </InfoContainer>
         <RS page="details">R$ </RS>
-        <MemberPrice page="details">{item.priceMember}</MemberPrice>
-        <NotMember page="details">{`NÃO SÓCIO, ${item.price}`}</NotMember>
+        <MemberPrice page="details">{formatPrice(item.priceMember)}</MemberPrice>
+        <NotMember page="details">{`NÃO SÓCIO, ${formatPrice(item.price)}`}</NotMember>
         <SommelierComentContainer>
           <SommelierTitle>Comentário do Sommelier</SommelierTitle>
           <SommelierComment>{item.sommelierComment}</SommelierComment>
