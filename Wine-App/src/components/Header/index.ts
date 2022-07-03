@@ -18,6 +18,8 @@ export const Container = styled.div`
     top: 0;
     justify-content: space-evenly;
     transition: left 4s;
+
+    z-index: 2;
     .menu{
         display: none;
     }

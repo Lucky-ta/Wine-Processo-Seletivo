@@ -19,7 +19,6 @@ export const DetailsContainer = styled.div`
     height: 100%;
     padding-right: 2em;
     padding-top: 4em;
-
     @media(max-width: 660px) {
         flex-direction: column;
         text-align: center;
@@ -38,6 +37,7 @@ export const DetailsContentContainer = styled.div`
     @media(max-width: 440px) {
         font-size: 0.6em;
     }   
+
 `;
 
 export const SommelierComentContainer = styled.div`
@@ -63,6 +63,9 @@ export const RegionContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 1em;
+    @media(max-width: 660px) {
+        margin: auto;
+    }
 `;
 
 export const FlagImage = styled.img`
@@ -85,9 +88,12 @@ export const LocationContainer = styled.div`
     color: #C81A78;
     font-size: 1.1em;
     font-weight: 700;
-
     .region {
         color: #888888;;
+    }
+
+    @media(max-width: 660px) {
+        justify-content: center;
     }
 `;
 
@@ -131,6 +137,7 @@ export const ArrowButton = styled.button`
     color: #111111;
     margin-top: 2em;
     width: 5em;
+    z-index: 1;
     &:hover {
         cursor: pointer;
     }
