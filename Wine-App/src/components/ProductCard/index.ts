@@ -17,6 +17,8 @@ export const ProductsContainer = styled.div`
     margin-top: 4em;
     font-family: 'Lato', sans-serif;
     justify-content: center;
+    transition: all 2s ease-out;
+
 
 
     @media(max-width: 1050px) {
