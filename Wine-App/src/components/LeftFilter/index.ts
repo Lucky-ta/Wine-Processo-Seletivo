@@ -24,7 +24,6 @@ export const FilterTitle = styled.h3`
     color: #000000;
     font-weight: 700;
     font-size: 1.3em;
-    
 `;
 
 export const RadioInput = styled.input`

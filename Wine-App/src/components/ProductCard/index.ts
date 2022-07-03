@@ -75,7 +75,7 @@ export const AddItemButtonDiv = styled.button<props>`
         @media(max-width: 660px) {
             max-width: none;
             height: 6em;
-}       
+        }       
     `}
 `;
 
@@ -115,8 +115,6 @@ export const Member = styled.span`
     font-weight: 700;
     font-size: 0.8em;
     padding: 0.5em;
-
-
 `;
 
 export const MemberPrice = styled.span<props>`

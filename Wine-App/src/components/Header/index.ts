@@ -16,7 +16,6 @@ export const Container = styled.div`
     position: fixed;
     top: 0;
     justify-content: space-evenly;
-
     transition: left 4s;
     
     .menu{
@@ -37,7 +36,7 @@ export const Container = styled.div`
     .image {
     }
 
-    }`;
+}`;
 
 export const ContentContainer = styled.div`
     display: flex;
@@ -101,6 +100,4 @@ export const SearchInputContainer = styled.div`
     display: flex;
     height: 2.4em;
     gap: 1em;
-
-    /* justify-content: flex-end; */
 `;

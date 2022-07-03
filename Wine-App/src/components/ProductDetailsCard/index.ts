@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
-    /* height: 100vh; */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 20% 80%;
@@ -19,8 +18,7 @@ export const DetailsContainer = styled.div`
     text-align: start;
     height: 100%;
     padding-right: 2em;
-    /* margin-top: 6em; */
-    /* max-height: 45em; */
+
     @media(max-width: 660px) {
         flex-direction: column;
         text-align: center;
@@ -51,10 +49,6 @@ export const SommelierComment = styled.p`
     line-height: 150%;
     width: 100%;
     word-wrap: break-word;
-`;
-
-export const QuantityButton = styled.button`
-    
 `;
 
 export const RegionContainer = styled.div`
@@ -108,11 +102,10 @@ export const AddItemButton = styled.button`
     width: 100%;
     height: 100%;
     font-weight: 700;
-        &:active {
-            transform: scale(0.98);
-            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-        }
+
     &:active {
+        transform: scale(0.98);
+        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
         color: #C81A78;
     }
 `;
