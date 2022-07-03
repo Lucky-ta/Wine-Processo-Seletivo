@@ -1,15 +1,18 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
+import FilterInput from '../../components/FilterInput/FilterInput';
 import Header from '../../components/Header/Header';
-import ProductCards from '../../components/ProductCard/ProductCards';
+import { Container } from '../../components/ProductDetailsCard';
+import ProductDetailsCard from '../../components/ProductDetailsCard/ProductDetailsCard';
 import fetchProducts from '../../services/fetchProducts';
 
 function ProductDetails(props) {
   return (
-    <div>
+    <Container>
       <Header />
-      <ProductCards item={props} />
-    </div>
+      <FilterInput />
+      <ProductDetailsCard item={props} />
+    </Container>
   );
 }
 

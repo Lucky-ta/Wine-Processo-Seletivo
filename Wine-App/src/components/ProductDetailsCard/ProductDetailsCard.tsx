@@ -1,22 +1,17 @@
 import React, { useContext } from 'react';
-import MyContext from '../../contexts/MyContext';
 import { Cart } from '../../interfaces/IApiResponse';
+import MyContext from '../../contexts/MyContext';
 import formatPrice from '../../services/formatFunctions/formatPrice';
-import {
-  CardContainer,
-  Image,
-  AddItemButton,
-  ItemName,
-  DiscountPrice,
-  Discount,
-  Member,
-  MemberPrice,
-  RS,
-  NotMember,
-  SideToSideSpansContainer,
-} from '.';
 
-function ProductCards({ item }: any) {
+import {
+  AddItemButton,
+  Image,
+  ItemName,
+  MemberPrice,
+  NotMember,
+} from '../ProductCard';
+
+function ProductDetailsCard({ item }: any) {
   const { cart } = useContext<any>(MyContext);
   const handleAddItemToCart = () => {
     const cartShape: Cart = {
@@ -48,25 +43,27 @@ function ProductCards({ item }: any) {
 
   return (
     <div>
-      <CardContainer>
-        <Image page="main" src={item.image} alt="" />
+      <Image page="details" src={item.image} alt="" />
+      <div>
         <ItemName>{item.name}</ItemName>
-        <SideToSideSpansContainer>
-          <DiscountPrice>{item.price}</DiscountPrice>
-          <Discount>{`${item.discount}% OFF`}</Discount>
-        </SideToSideSpansContainer>
-        <SideToSideSpansContainer>
-          <Member>SÓCIO WINE</Member>
-          <RS>R$ </RS>
-          <MemberPrice>{item.priceMember}</MemberPrice>
-        </SideToSideSpansContainer>
+        <p>estado etc....</p>
+        <MemberPrice>{item.priceMember}</MemberPrice>
         <NotMember>{`NÃO SÓCIO, ${item.price}`}</NotMember>
-      </CardContainer>
-      <AddItemButton onClick={handleAddItemToCart} type="button">
-        ADICIONAR
-      </AddItemButton>
+        <div>
+          <h3>comentario do somelier</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
+            error nisi aperiam commodi pariatur ullam, temporibus impedit animi
+            incidunt reiciendis dolor dolore totam minus explicabo labore
+            placeat, repellat ut veniam.
+          </p>
+          <AddItemButton onClick={handleAddItemToCart} type="button">
+            ADICIONAR
+          </AddItemButton>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default ProductCards;
+export default ProductDetailsCard;

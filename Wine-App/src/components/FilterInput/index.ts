@@ -6,7 +6,7 @@ const Container = styled.div`
     height: 3em;
     text-align: center;
     justify-content: flex-end;
-    margin-top: 6em;
+    padding-top: 6em;
     padding-right: 6em;
   
     

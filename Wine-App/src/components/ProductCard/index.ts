@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const GlobalContainer = styled.div`
     width: 100%;
@@ -33,14 +33,22 @@ export const CardContainer = styled.div`
     box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
     width: 15em;
     color: #1D1D1B;
-    /* height: 90%; */
 `;
 
-export const Image = styled.img`
+interface props {
+    page: string
+}
+
+export const Image = styled.img<props>`
     width: 100%;
     height: 100%;
     max-height: 12em;
     object-fit: contain;
+
+    ${({ page }) => page === 'details' && css`
+
+
+    `}
 `;
 
 export const AddItemButton = styled.button`

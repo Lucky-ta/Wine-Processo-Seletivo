@@ -11,6 +11,6 @@ export default createGlobalStyle`
         background-color: #F5F8FA;
         color: #123952;
         width: 100%;
-        height: 100%;
+        height: 100vh;
     }
 `;
