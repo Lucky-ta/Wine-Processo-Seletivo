@@ -121,5 +121,11 @@ export const ArrowButton = styled.button`
     gap: 1em;
     font-size: 1.2em;
     color: #111111;
-    z-index: -1;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &:active {
+        cursor: initial;
+    }
 `;
