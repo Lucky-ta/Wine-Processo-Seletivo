@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { Cart } from '../../interfaces/IApiResponse';
@@ -29,63 +29,50 @@ import {
 import { Button } from '../Header';
 
 function ProductDetailsCard({ item }: any) {
-  const [product, setProduct] = useState<Cart | null>({});
-
+  const [quantity, setQuantity] = useState(1);
   const { cart } = useContext<any>(MyContext);
 
   const cartShape: Cart = {
-    id: product.id,
-    name: product.name,
-    price: product.price,
-    discount: product.discount,
-    priceMember: product.priceMember,
-    totalPrice: product.price,
-    totalMemberPrice: product.priceMember,
-    quantity: product.quantity,
+    id: item.id,
+    name: item.name,
+    price: item.price,
+    discount: item.discount,
+    priceMember: item.priceMember,
+    totalPrice: item.price * quantity,
+    totalMemberPrice: item.priceMember * quantity,
+    quantity,
   };
 
   const handleAddItemToCart = () => {
-    // const verifyEqualItems = cart.some(
-    //   ({ id }: any): boolean => id === cartShape.id,
-    // );
-    // if (!verifyEqualItems) {
-    //   cart.push(cartShape);
-    localStorage.setItem('WineCart', JSON.stringify(cart));
-    console.log(cartShape);
+    const storagedCart = JSON.parse(localStorage.getItem('WineCart'));
+    const findCart = storagedCart.find(({ id }) => id === item.id);
 
-    // }localStorage.setItem('WineCart', JSON.stringify(cart));
+    if (!findCart) {
+      cart.push(cartShape);
+      localStorage.setItem('WineCart', JSON.stringify(cart));
+    }
+    const find = cart.find(({ id }) => id === cartShape.id);
+
+    find.totalPrice = formatPrice(cartShape.totalPrice);
+    find.totalMemberPrice = formatPrice(cartShape.totalMemberPrice);
+    find.quantity = formatPrice(cartShape.quantity);
+    localStorage.setItem('WineCart', JSON.stringify(cart));
   };
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storagedProduct = JSON.parse(localStorage.getItem('WineCart'));
-      const filteredProduct = storagedProduct.find(({ id }) => id === item.id);
-      setProduct(filteredProduct);
-    }
-  }, []);
-
   const hanlderSumQuantity = () => {
-    cartShape.quantity += 1;
-    cartShape.totalPrice = cartShape.price * cartShape.quantity;
-    cartShape.totalMemberPrice = cartShape.priceMember * cartShape.quantity;
-
-    // const equalItem = cart.find(({ id }) => id === cartShape.id);
-    // equalItem.quantity += 1;
-    // equalItem.totalPrice = formatPrice(equalItem.price * equalItem.quantity);
-    // equalItem.totalMemberPrice = formatPrice(
-    //   equalItem.priceMember * equalItem.quantity,
-    // );
-    // localStorage.setItem('WineCart', JSON.stringify(cart));
+    setQuantity(quantity + 1);
   };
 
   const hanlderSubtractQuantity = () => {
-    // const equalItem = cart.find(({ id }) => id === cartShape.id);
-    // equalItem.quantity -= 1;
-    // equalItem.totalPrice = formatPrice(equalItem.price * equalItem.quantity);
-    // equalItem.totalMemberPrice = formatPrice(
-    //   equalItem.priceMember * equalItem.quantity,
-    // );
-    // localStorage.setItem('WineCart', JSON.stringify(cart));
+    const find = cart.find(({ id }) => id === cartShape.id);
+    const index = cart.indexOf(find);
+
+    setQuantity(quantity - 1);
+    if (quantity <= 0) setQuantity(0);
+    if (quantity <= 1) {
+      cart.splice(index, 1);
+      localStorage.setItem('WineCart', JSON.stringify(cart));
+    }
   };
 
   return (
@@ -123,7 +110,7 @@ function ProductDetailsCard({ item }: any) {
               >
                 <AiOutlineMinusCircle size="2.6em" />
               </Button>
-              {cartShape.quantity}
+              {quantity}
               <Button onClick={hanlderSumQuantity} page="details" type="button">
                 <HiOutlinePlusCircle size="2.6em" />
               </Button>
