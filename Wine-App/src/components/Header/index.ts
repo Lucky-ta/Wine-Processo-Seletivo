@@ -67,10 +67,9 @@ export const SwitchPageButton = styled.span`
 export const SearchInput = styled.input`
     border-color: black;
     border-radius: 3em;
-    padding: 5px;
+    padding: 6px;
     width: 15em;
     transition: all 0.5s;
-    
     &:focus{
         width: 25em;
     }
@@ -88,5 +87,8 @@ export const SearchButton = styled.button`
 
 export const SearchInputContainer = styled.div`
     display: flex;
+    height: 2.4em;
     gap: 1em;
+
+    /* justify-content: flex-end; */
 `;

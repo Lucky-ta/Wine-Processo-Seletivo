@@ -9,5 +9,12 @@ export const Container = styled.div`
 
 export const DetailsContainer = styled.div`
     display: flex;
-    width: 100%;
-`
+    background-color: aqua;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-evenly;
+`;
+
+export const DetailsContentContainer = styled.div`
+
+`;

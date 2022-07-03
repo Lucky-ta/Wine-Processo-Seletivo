@@ -48,6 +48,7 @@ export const Image = styled.img<props>`
     ${({ page }) => page === 'details' && css`
     object-fit: none;
     max-height: none;
+    max-width: 30em;
 
     `}
 `;

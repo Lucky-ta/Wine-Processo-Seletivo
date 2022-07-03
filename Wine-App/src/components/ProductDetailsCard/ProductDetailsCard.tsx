@@ -10,7 +10,7 @@ import {
   MemberPrice,
   NotMember,
 } from '../ProductCard';
-import { DetailsContainer } from '.';
+import { DetailsContainer, DetailsContentContainer } from '.';
 
 function ProductDetailsCard({ item }: any) {
   const { cart } = useContext<any>(MyContext);
@@ -45,7 +45,7 @@ function ProductDetailsCard({ item }: any) {
   return (
     <DetailsContainer>
       <Image page="details" src={item.image} alt="" />
-      <div>
+      <DetailsContentContainer>
         <ItemName>{item.name}</ItemName>
         <p>estado etc....</p>
         <MemberPrice>{item.priceMember}</MemberPrice>
@@ -67,7 +67,7 @@ function ProductDetailsCard({ item }: any) {
             ADICIONAR
           </AddItemButton>
         </div>
-      </div>
+      </DetailsContentContainer>
     </DetailsContainer>
   );
 }
