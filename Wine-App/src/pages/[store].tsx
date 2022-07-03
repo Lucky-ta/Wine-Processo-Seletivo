@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../components/Header/Header';
 import Pagination from '../components/Pagination/Pagination';
 import ProductCards from '../components/ProductCard/ProductCards';
@@ -17,11 +17,15 @@ import MainContentContainer from '../../styles/Containers';
 
 function Store({ items }: IApiResponse) {
   const { filteredProducts } = useContext<any>(MyContext);
+  const [visible, setVisible] = useState(10);
 
   const props = {
     isCardsRender: filteredProducts !== null && filteredProducts.length === 0,
   };
 
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 20);
+  };
   return (
     <GlobalContainer>
       <Header />
@@ -30,14 +34,14 @@ function Store({ items }: IApiResponse) {
         <SearchLeftBar />
         <ProductsContainer>
           {filteredProducts !== null
-            ? filteredProducts.map((i: Item) => (
+            ? filteredProducts.slice(0, visible).map((i: Item) => (
               <ProductCards key={i.id} item={i} />
             ))
             : items.map((i) => <ProductCards key={i.id} item={i} />)}
         </ProductsContainer>
       </MainContentContainer>
       <Pagination props={props} />
-      <ShowMoreButton type="button">MOSTRAR MAIS</ShowMoreButton>
+      <ShowMoreButton onClick={showMoreItems} type="button">MOSTRAR MAIS</ShowMoreButton>
     </GlobalContainer>
   );
 }
@@ -55,6 +59,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const response = await axios.get(
     `https://wine-back-test.herokuapp.com/products?page=${store}&limit=10`,
   );
+
   const json: IApiResponse = response.data;
   return { props: json, revalidate: 3600 };
 };
