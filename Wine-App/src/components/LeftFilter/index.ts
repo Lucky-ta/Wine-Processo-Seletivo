@@ -10,7 +10,7 @@ export const Container = styled.div`
     margin-top: 2em;
     position: fixed;
     left: 6em;
-    z-index: -1;
+    z-index: 1;
     @media(max-width: 1050px) {
     display: none;
   }
