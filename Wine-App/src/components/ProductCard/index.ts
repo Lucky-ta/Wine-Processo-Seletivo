@@ -54,7 +54,7 @@ export const Image = styled.img<props>`
     `}
 `;
 
-export const AddItemButton = styled.button<props>`
+export const AddItemButtonDiv = styled.button<props>`
     border: none;
     background-color: #7EBC43;
     color: white;
@@ -63,18 +63,15 @@ export const AddItemButton = styled.button<props>`
     border-radius: 3.89354px;
     margin-top: 1em;
     box-shadow: 0px 0.973384px 1.94677px rgba(0, 0, 0, 0.2);
-    &:active {
-            transform: scale(0.98);
-            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-        }
+
+        display: flex;
+        justify-content: center;
 
     ${({ page }) => page === 'details' && css`
-        display: flex;
-        align-items: center;
         height: 4em;
+        align-items: center;
         max-width: 25em;
-        justify-content: space-evenly;
-
+        
         @media(max-width: 660px) {
             max-width: none;
             height: 6em;

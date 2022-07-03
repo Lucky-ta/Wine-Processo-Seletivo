@@ -6,7 +6,6 @@ import formatPrice from '../../services/formatFunctions/formatPrice';
 import {
   CardContainer,
   Image,
-  AddItemButton,
   ItemName,
   DiscountPrice,
   Discount,
@@ -15,7 +14,9 @@ import {
   RS,
   NotMember,
   SideToSideSpansContainer,
+  AddItemButtonDiv,
 } from '.';
+import { AddItemButton } from '../ProductDetailsCard';
 
 function ProductCards({ item }: any) {
   const path = useRouter();
@@ -69,9 +70,11 @@ function ProductCards({ item }: any) {
         </SideToSideSpansContainer>
         <NotMember page="main">{`NÃO SÓCIO, ${item.price}`}</NotMember>
       </CardContainer>
-      <AddItemButton page="main" onClick={handleAddItemToCart} type="button">
-        ADICIONAR
-      </AddItemButton>
+      <AddItemButtonDiv page="main">
+        <AddItemButton onClick={handleAddItemToCart} type="button">
+          ADICIONAR
+        </AddItemButton>
+      </AddItemButtonDiv>
     </div>
   );
 }

@@ -63,7 +63,10 @@ export const Button = styled.button<props>`
 
     ${({ page }) => page === 'details' && css`
         color: white;
-        height: 3em
+        
+    &:active {
+        color: #C81A78;
+    }
     `}
 `;
 

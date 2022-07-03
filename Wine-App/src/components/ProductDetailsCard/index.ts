@@ -92,3 +92,27 @@ export const LocationContainer = styled.div`
 export const Span = styled.span`
     color:#888888;
 `;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 2.4em;
+    font-size: 1.2em;
+    font-weight: 700;
+`;
+
+export const AddItemButton = styled.button`
+    background: none;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+        &:active {
+            transform: scale(0.98);
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        }
+    &:active {
+        color: #C81A78;
+    }
+`;
