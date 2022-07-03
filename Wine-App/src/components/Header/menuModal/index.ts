@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     position: fixed;
-    background-color: white;
+    background-color: #DEDEDE;;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 20em;
@@ -21,7 +21,6 @@ const Container = styled.div`
     margin-left: 0%;
     width: 100%;
   }
-
 }
 
   .menuProfilePic {

@@ -5,7 +5,7 @@ import ProfileSvg from '../../../public/svg/conta.svg';
 import SearchSvg from '../../../public/svg/Busca.svg';
 import LogoSvg from '../../../public/svg/black.svg';
 import MyContext from '../../contexts/MyContext';
-import OptionModal from './modals/OptionModal';
+import OptionModal from './menuModal/OptionModal';
 
 import {
   Container,
@@ -16,9 +16,11 @@ import {
   SwitchPageButton,
   SvgImage,
 } from '.';
+import CartModal from './cartModal/CartModal';
 
 function Header() {
   const { toggle, setToggle } = useContext<any>(MyContext);
+  const [cartModel, SetCartModel] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
   return (
     <Container>
@@ -56,9 +58,10 @@ function Header() {
         >
           <SvgImage src={ProfileSvg.src} alt="" />
         </Button>
-        <Button classN="cart" page="main" data-testid="cartButton" type="button">
+        <Button onClick={() => SetCartModel(!cartModel)} classN="cart" page="main" data-testid="cartButton" type="button">
           <SvgImage classN="cart" src={CartSvg.src} alt="" />
         </Button>
+        { cartModel && <CartModal modelStatus={SetCartModel}/>}
       </ButtonsContainer>
     </Container>
   );
