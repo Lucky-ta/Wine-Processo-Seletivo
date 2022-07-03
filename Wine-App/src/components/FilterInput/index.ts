@@ -10,7 +10,7 @@ const Container = styled.div`
     
     @media(max-width: 1050px) {
     justify-content: flex-start;
-    padding-left: 2em;
+    padding-left: 6em;
   }
 `;
 
