@@ -5,6 +5,8 @@ const MainContentContainer = styled.div`
     width: 100%;
     height: 100%;
     justify-content: start;
+    
+    
 `;
 
 export default MainContentContainer;
