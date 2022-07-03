@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
+import { Rating } from 'react-simple-star-rating';
 import { Cart } from '../../interfaces/IApiResponse';
 import MyContext from '../../contexts/MyContext';
 import formatPrice from '../../services/formatFunctions/formatPrice';
@@ -31,6 +32,7 @@ import { Button } from '../Header';
 function ProductDetailsCard({ item }: any) {
   const [quantity, setQuantity] = useState(1);
   const { cart } = useContext<any>(MyContext);
+  console.log(item);
 
   const cartShape: Cart = {
     id: item.id,
@@ -94,6 +96,7 @@ function ProductDetailsCard({ item }: any) {
           </RegionContainer>
           <p>{item.type}</p>
           <p>{item.volume}</p>
+          <Rating size={32} ratingValue={item.avaliations / item.rating} />
         </InfoContainer>
         <RS page="details">R$ </RS>
         <MemberPrice page="details">{formatPrice(item.priceMember)}</MemberPrice>
