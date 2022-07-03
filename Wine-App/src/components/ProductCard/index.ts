@@ -10,39 +10,6 @@ export const GlobalContainer = styled.div`
     
 `;
 
-export const ProductsContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em;
-    text-align: center;
-    margin-top: 4em;
-    margin-left: 10em;
-    font-family: 'Lato', sans-serif;
-    justify-content: center;
-
-
-    @media(max-width: 1050px) {
-        max-width: 100%;
-        margin-right: 6em;
-        margin-left: 6em;
-  }
-
-  @media(max-width: 800px) {
-    grid-template-columns: 1fr 1fr;
-    max-width: 30em;
-  }
-
-
-`;
-
-export const CardContainer = styled.div`
-    background-color: #FFFFFF;
-    box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
-    width: 15em;
-    color: #1D1D1B;
-    transition: all 2s linear;
-`;
-
 export const Image = styled.img<props>`
     width: 100%;
     height: 100%;

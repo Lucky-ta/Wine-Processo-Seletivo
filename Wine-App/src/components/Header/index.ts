@@ -35,7 +35,6 @@ export const Container = styled.div`
 
     .image {
     }
-
 }`;
 
 export const ContentContainer = styled.div`

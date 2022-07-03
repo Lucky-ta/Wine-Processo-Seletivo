@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React, { useContext, useState } from 'react';
+import { motion } from 'framer-motion';
 import Header from '../components/Header/Header';
 import Pagination from '../components/Pagination/Pagination';
 import ProductCards from '../components/ProductCard/ProductCards';
@@ -9,7 +10,6 @@ import MyContext from '../contexts/MyContext';
 import { IApiResponse, Item } from '../interfaces/IApiResponse';
 import {
   GlobalContainer,
-  ProductsContainer,
   ShowMoreButton,
 } from '../components/ProductCard/index';
 import FilterInput from '../components/FilterInput/FilterInput';
@@ -32,13 +32,13 @@ function Store({ items }: IApiResponse) {
       <FilterInput />
       <MainContentContainer>
         <SearchLeftBar />
-        <ProductsContainer>
+        <motion.div layout className="motion">
           {filteredProducts !== null
             ? filteredProducts.slice(0, visible).map((i: Item) => (
               <ProductCards key={i.id} item={i} />
             ))
             : items.map((i) => <ProductCards key={i.id} item={i} />)}
-        </ProductsContainer>
+        </motion.div>
       </MainContentContainer>
       <Pagination props={props} />
       <ShowMoreButton onClick={showMoreItems} type="button">MOSTRAR MAIS</ShowMoreButton>

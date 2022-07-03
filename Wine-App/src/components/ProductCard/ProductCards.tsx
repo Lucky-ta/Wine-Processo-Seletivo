@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import MyContext from '../../contexts/MyContext';
 import { Cart } from '../../interfaces/IApiResponse';
 import formatPrice from '../../services/formatFunctions/formatPrice';
 import {
-  CardContainer,
   Image,
   ItemName,
   DiscountPrice,
@@ -48,7 +48,9 @@ function ProductCards({ item }: any) {
 
   return (
     <div>
-      <CardContainer
+      <motion.div
+        layout
+        className="motionCard"
         onKeyDown={() => null}
         role="button"
         onClick={redirectProductDetails}
@@ -65,8 +67,13 @@ function ProductCards({ item }: any) {
           <RS page="main">R$ </RS>
           <MemberPrice page="main">{formatPrice(item.priceMember)}</MemberPrice>
         </SideToSideSpansContainer>
-        <NotMember page="main">{`NÃO SÓCIO, ${formatPrice(item.price)}`}</NotMember>
-      </CardContainer>
+        <NotMember page="main">
+          {`NÃO SÓCIO, ${formatPrice(
+            item.price,
+          )}`}
+
+        </NotMember>
+      </motion.div>
       <AddItemButtonDiv page="main">
         <AddItemButton onClick={handleAddItemToCart} type="button">
           ADICIONAR
