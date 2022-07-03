@@ -22,7 +22,14 @@ export const Image = styled.img<props>`
     max-width: 40em;
     max-height: 40em;
 
+
+    @media(max-width: 440px) {
+        width: 50%;
+        object-fit: contain;
+        margin-top: 10em;
+    }   
     `}
+
 `;
 
 export const AddItemButtonDiv = styled.div<props>`

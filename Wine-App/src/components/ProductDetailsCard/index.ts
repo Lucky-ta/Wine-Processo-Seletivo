@@ -18,18 +18,26 @@ export const DetailsContainer = styled.div`
     text-align: start;
     height: 100%;
     padding-right: 2em;
+    padding-top: 4em;
 
     @media(max-width: 660px) {
         flex-direction: column;
         text-align: center;
         padding: 0;
-}
+    }
+
+
 `;
 
 export const DetailsContentContainer = styled.div`
     width: 100%;
     max-width: 40em;
+    padding-left: 1em;
+    padding-right: 1.2em;
 
+    @media(max-width: 440px) {
+        font-size: 0.6em;
+    }   
 `;
 
 export const SommelierComentContainer = styled.div`
@@ -121,7 +129,8 @@ export const ArrowButton = styled.button`
     gap: 1em;
     font-size: 1.2em;
     color: #111111;
-
+    margin-top: 2em;
+    width: 5em;
     &:hover {
         cursor: pointer;
     }
