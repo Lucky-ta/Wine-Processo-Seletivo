@@ -10,6 +10,7 @@ import {
   MemberPrice,
   NotMember,
 } from '../ProductCard';
+import { DetailsContainer } from '.';
 
 function ProductDetailsCard({ item }: any) {
   const { cart } = useContext<any>(MyContext);
@@ -42,7 +43,7 @@ function ProductDetailsCard({ item }: any) {
   };
 
   return (
-    <div>
+    <DetailsContainer>
       <Image page="details" src={item.image} alt="" />
       <div>
         <ItemName>{item.name}</ItemName>
@@ -58,11 +59,16 @@ function ProductDetailsCard({ item }: any) {
             placeat, repellat ut veniam.
           </p>
           <AddItemButton onClick={handleAddItemToCart} type="button">
+            <div>
+              <button type="button">-</button>
+              1
+              <button type="button">+</button>
+            </div>
             ADICIONAR
           </AddItemButton>
         </div>
       </div>
-    </div>
+    </DetailsContainer>
   );
 }
 

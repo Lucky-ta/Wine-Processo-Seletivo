@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
 import MyContext from '../../contexts/MyContext';
 import { Cart } from '../../interfaces/IApiResponse';
 import formatPrice from '../../services/formatFunctions/formatPrice';
@@ -17,6 +18,7 @@ import {
 } from '.';
 
 function ProductCards({ item }: any) {
+  const path = useRouter();
   const { cart } = useContext<any>(MyContext);
   const handleAddItemToCart = () => {
     const cartShape: Cart = {
@@ -46,9 +48,14 @@ function ProductCards({ item }: any) {
     }
   };
 
+  const redirectProductDetails = () => {
+    const { id } = item;
+    path.push(`/productDetails/${id}`);
+  };
+
   return (
     <div>
-      <CardContainer>
+      <CardContainer onClick={redirectProductDetails}>
         <Image page="main" src={item.image} alt="" />
         <ItemName>{item.name}</ItemName>
         <SideToSideSpansContainer>

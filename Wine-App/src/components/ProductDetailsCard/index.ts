@@ -6,3 +6,8 @@ export const Container = styled.div`
     text-align: center;
     /* background-color: black; */
 `;
+
+export const DetailsContainer = styled.div`
+    display: flex;
+    width: 100%;
+`
