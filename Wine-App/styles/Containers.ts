@@ -25,6 +25,11 @@ const MainContentContainer = styled.div`
     max-width: 30em;
   }
 
+  @media(max-width: 550px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
     }
 
     .motionCard {
@@ -32,6 +37,12 @@ const MainContentContainer = styled.div`
     box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
     width: 15em;
     color: #1D1D1B;
+
+    @media(max-width: 550px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 26em;
+  }
     }
 `;
 

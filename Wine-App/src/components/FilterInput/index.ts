@@ -12,6 +12,13 @@ const Container = styled.div`
     justify-content: flex-start;
     padding-left: 6em;
   }
+
+  @media(max-width: 550px) {
+    margin: 0;
+    padding-left: 2.3em;
+    padding-right: 0;
+    justify-content: start;
+  }
 `;
 
 export default Container;
