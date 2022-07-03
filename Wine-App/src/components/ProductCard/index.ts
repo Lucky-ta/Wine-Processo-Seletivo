@@ -50,6 +50,7 @@ export const Image = styled.img<props>`
     max-height: none;
     max-width: 40em;
     max-height: 40em;
+
     `}
 `;
 
@@ -73,6 +74,11 @@ export const AddItemButton = styled.button<props>`
         height: 4em;
         max-width: 25em;
         justify-content: space-evenly;
+
+        @media(max-width: 660px) {
+            max-width: none;
+            height: 6em;
+}       
     `}
 `;
 

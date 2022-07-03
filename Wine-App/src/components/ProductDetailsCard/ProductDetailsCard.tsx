@@ -18,11 +18,17 @@ import {
   SommelierComentContainer,
   SommelierTitle,
   SommelierComment,
+  FlagImage,
+  RegionContainer,
+  InfoContainer,
+  LocationContainer,
+  Span,
 } from '.';
 import { Button } from '../Header';
 
 function ProductDetailsCard({ item }: any) {
   const [product, setProduct] = useState({});
+  console.log(item);
 
   const { cart } = useContext<any>(MyContext);
 
@@ -79,8 +85,22 @@ function ProductDetailsCard({ item }: any) {
     <DetailsContainer>
       <Image page="details" src={item.image} alt="" />
       <DetailsContentContainer>
+        <LocationContainer>
+          <p>Vinhos</p>
+          <Span>{'>'}</Span>
+          <p>{item.country}</p>
+          <Span>{'>'}</Span>
+          <p className="region">{item.region}</p>
+        </LocationContainer>
         <ItemName page="details">{item.name}</ItemName>
-        <p>estado etc....</p>
+        <InfoContainer>
+          <RegionContainer>
+            <FlagImage src={item.flag} alt="" />
+            <p>{item.country}</p>
+          </RegionContainer>
+          <p>{item.type}</p>
+          <p>{item.volume}</p>
+        </InfoContainer>
         <RS page="details">R$ </RS>
         <MemberPrice page="details">{item.priceMember}</MemberPrice>
         <NotMember page="details">{`NÃO SÓCIO, ${item.price}`}</NotMember>
