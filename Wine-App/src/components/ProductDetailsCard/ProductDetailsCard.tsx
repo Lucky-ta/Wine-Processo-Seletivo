@@ -110,7 +110,7 @@ function ProductDetailsCard({ item }: any) {
               >
                 <AiOutlineMinusCircle size="2.6em" />
               </Button>
-              {quantity}
+              <p>{quantity}</p>
               <Button onClick={hanlderSumQuantity} page="details" type="button">
                 <HiOutlinePlusCircle size="2.6em" />
               </Button>

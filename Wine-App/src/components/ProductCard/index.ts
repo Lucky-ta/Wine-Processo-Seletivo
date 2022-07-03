@@ -54,7 +54,7 @@ export const Image = styled.img<props>`
     `}
 `;
 
-export const AddItemButtonDiv = styled.button<props>`
+export const AddItemButtonDiv = styled.div<props>`
     border: none;
     background-color: #7EBC43;
     color: white;

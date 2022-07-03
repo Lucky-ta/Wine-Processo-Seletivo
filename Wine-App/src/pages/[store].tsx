@@ -29,7 +29,7 @@ function Store({ items }: IApiResponse) {
         </ProductsContainer>
       </MainContentContainer>
       <Pagination />
-      <ShowMoreButton>MOSTRAR MAIS</ShowMoreButton>
+      <ShowMoreButton type="button">MOSTRAR MAIS</ShowMoreButton>
     </GlobalContainer>
   );
 }

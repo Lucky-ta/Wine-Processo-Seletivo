@@ -21,6 +21,7 @@ function Header() {
   return (
     <Container>
       <Button
+        type="button"
         page="main"
         onClick={() => setIsModalActive(!isModalActive)}
         className="menu"

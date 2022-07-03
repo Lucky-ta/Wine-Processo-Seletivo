@@ -48,7 +48,12 @@ function ProductCards({ item }: any) {
 
   return (
     <div>
-      <CardContainer onClick={redirectProductDetails}>
+      <CardContainer
+        onKeyDown={() => null}
+        role="button"
+        onClick={redirectProductDetails}
+        tabIndex={0}
+      >
         <Image page="main" src={item.image} alt="" />
         <ItemName page="main">{item.name}</ItemName>
         <SideToSideSpansContainer>

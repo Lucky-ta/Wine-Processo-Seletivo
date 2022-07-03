@@ -10,6 +10,7 @@ function OptionModal() {
         data-testid="profileButton"
         className="menuProfilePic"
         type="button"
+        page="main"
       >
         <VscAccount size="2.8em" />
         Lucas Maieski - (WINE MEMBER)

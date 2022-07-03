@@ -6,7 +6,7 @@ import { Container } from '../../components/ProductDetailsCard';
 import ProductDetailsCard from '../../components/ProductDetailsCard/ProductDetailsCard';
 import fetchProducts from '../../services/fetchProducts';
 
-function ProductDetails(props) {
+function ProductDetails(props: any) {
   return (
     <Container>
       <Header />
