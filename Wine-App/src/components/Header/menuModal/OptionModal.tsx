@@ -6,15 +6,17 @@ import { Button } from '..';
 function OptionModal() {
   return (
     <Container>
-      <Button
-        data-testid="profileButton"
-        className="menuProfilePic"
-        type="button"
-        page="main"
-      >
-        <VscAccount size="2.8em" />
-        Lucas Maieski - (WINE MEMBER)
-      </Button>
+      <div className="HeaderContainer">
+        <Button
+          data-testid="profileButton"
+          className="menuProfilePic"
+          type="button"
+          page="main"
+        >
+          <VscAccount size="2.8em" />
+          Lucas Maieski - (WINE MEMBER)
+        </Button>
+      </div>
     </Container>
   );
 }

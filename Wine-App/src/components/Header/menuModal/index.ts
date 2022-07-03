@@ -5,7 +5,7 @@ const Container = styled.div`
     background-color: #DEDEDE;;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 20em;
+    max-width: 25em;
     height: 90%;
     left: 0;
     bottom: 0;
@@ -24,12 +24,23 @@ const Container = styled.div`
 }
 
   .menuProfilePic {
-    margin-top: 2em;
-    margin-left: 2em;
     display: flex;
     text-align: center;
     align-items: center;
     gap: 1em;
+    color: black;
+    font-size: 0.9em;
+    font: 700;
+  }
+
+  .HeaderContainer {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 5em;
+    justify-content: start;
+    text-align: center;
+    padding-left: 1.4em;
   }
 
 `;
