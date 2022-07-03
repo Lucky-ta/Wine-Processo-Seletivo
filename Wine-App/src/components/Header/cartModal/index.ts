@@ -21,8 +21,8 @@ export const Container = styled.div`
 
   to {
     margin-right: 0%;
-    width: 100%;
   }
+  
 }
 `;
 

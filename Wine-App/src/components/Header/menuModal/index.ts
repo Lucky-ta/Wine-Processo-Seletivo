@@ -11,6 +11,7 @@ const Container = styled.div`
     bottom: 0;
     animation-duration: 0.8s;
     animation-name: slidein;
+    z-index: 999;
 
   @keyframes slidein {
   from {
