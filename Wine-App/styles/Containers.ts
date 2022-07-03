@@ -4,7 +4,7 @@ const MainContentContainer = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
 `;
 
 export default MainContentContainer;

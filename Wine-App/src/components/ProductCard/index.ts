@@ -16,9 +16,8 @@ export const ProductsContainer = styled.div`
     text-align: center;
     margin-top: 4em;
     font-family: 'Lato', sans-serif;
-    width: 100%;
-    margin-right: 8em;
-    max-width: 65%;
+    justify-content: center;
+
 
     @media(max-width: 1050px) {
         max-width: 100%;
