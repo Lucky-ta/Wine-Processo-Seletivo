@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { IoIosSearch } from 'react-icons/io';
-import { VscAccount } from 'react-icons/vsc';
-import { GiBeachBag } from 'react-icons/gi';
 import { GrMenu } from 'react-icons/gr';
+import CartSvg from '../../../public/svg/Bitmap.svg';
+import ProfileSvg from '../../../public/svg/conta.svg';
+import SearchSvg from '../../../public/svg/Busca.svg';
+import LogoSvg from '../../../public/svg/black.svg';
 import MyContext from '../../contexts/MyContext';
 import OptionModal from './modals/OptionModal';
 
@@ -13,6 +14,7 @@ import {
   ButtonsContainer,
   Button,
   SwitchPageButton,
+  SvgImage,
 } from '.';
 
 function Header() {
@@ -29,11 +31,7 @@ function Header() {
         <GrMenu size="2.5em" />
       </Button>
       {isModalActive && <OptionModal />}
-      <Image
-        src="https://centraldeajuda.wine.com.br/static/media/LogoWine.dc8aad50.svg"
-        alt="wine-logo"
-        className="image"
-      />
+      <Image src={LogoSvg.src} alt="wine-logo" className="image" />
       <ContentContainer className="content">
         <span>Clube</span>
         <SwitchPageButton>Loja</SwitchPageButton>
@@ -48,7 +46,7 @@ function Header() {
           type="button"
           onClick={() => setToggle(!toggle)}
         >
-          <IoIosSearch size="3em" />
+          <SvgImage src={SearchSvg.src} alt="" />
         </Button>
         <Button
           page="main"
@@ -56,10 +54,10 @@ function Header() {
           className="profileBtn"
           type="button"
         >
-          <VscAccount size="2.8em" />
+          <SvgImage src={ProfileSvg.src} alt="" />
         </Button>
-        <Button page="main" data-testid="cartButton" type="button">
-          <GiBeachBag size="2.8em" />
+        <Button classN="cart" page="main" data-testid="cartButton" type="button">
+          <SvgImage classN="cart" src={CartSvg.src} alt="" />
         </Button>
       </ButtonsContainer>
     </Container>

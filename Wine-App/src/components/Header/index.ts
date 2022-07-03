@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
 interface props {
-    page: string
+    page?: string;
+    classN?: string
 }
 
 export const Container = styled.div`
@@ -60,6 +61,15 @@ export const Button = styled.button<props>`
     border: none;
     color: grey;
 
+
+    ${({ classN }) => classN === 'cart' && css`
+            background-color: #F6B554;
+            border-radius: 2em;
+            width: 3.6em;
+            height: 3.6em
+
+    `}
+
     ${({ page }) => page === 'details' && css`
         color: white;
         
@@ -100,4 +110,16 @@ export const SearchInputContainer = styled.div`
     display: flex;
     height: 2.4em;
     gap: 1em;
+`;
+
+export const SvgImage = styled.img<props>`
+    width: 3em;
+
+    ${({ classN }) => classN === 'cart' && css`
+        width: 2.6em;
+        background-color: orange;
+        
+        border-bottom-left-radius: 0.9em;
+        border-bottom-right-radius: 0.9em;
+    `}
 `;
