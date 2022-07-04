@@ -38,6 +38,10 @@ const MainContentContainer = styled.div`
     width: 15em;
     color: #1D1D1B;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @media(max-width: 550px) {
     grid-template-columns: 1fr;
     width: 18em;
