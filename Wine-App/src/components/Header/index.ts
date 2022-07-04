@@ -103,7 +103,7 @@ export const SwitchPageButton = styled.span`
 
 export const SearchInput = styled.input`
     border-color: black;
-    border-radius: 3em;
+    border-radius: 0.8em;
     padding: 6px;
     width: 15em;
     transition: all 0.5s;
@@ -130,7 +130,7 @@ export const SearchButton = styled.button`
 
 export const SearchInputContainer = styled.div`
     display: flex;
-    height: 2.4em;
+    height: 2.6em;
     gap: 1em;
 `;
 

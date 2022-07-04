@@ -6,7 +6,7 @@ const Container = styled.div`
     height: 3em;
     text-align: center;
     justify-content: flex-end;
-    padding-top: 6em;
+    padding-top: 7em;
     
     @media(max-width: 1050px) {
     justify-content: flex-start;
