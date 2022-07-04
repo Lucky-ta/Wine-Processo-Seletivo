@@ -4,6 +4,12 @@ interface props {
     page: string
 }
 
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
 export const GlobalContainer = styled.div`
     width: 100%;
     height: 100%;

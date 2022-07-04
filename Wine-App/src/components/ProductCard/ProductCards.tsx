@@ -15,6 +15,7 @@ import {
   NotMember,
   SideToSideSpansContainer,
   AddItemButtonDiv,
+  Container,
 } from '.';
 import { AddItemButton } from '../ProductDetailsCard';
 
@@ -47,7 +48,7 @@ function ProductCards({ item }: any) {
   };
 
   return (
-    <div>
+    <Container>
       <motion.div
         layout
         className="motionCard"
@@ -79,7 +80,7 @@ function ProductCards({ item }: any) {
           ADICIONAR
         </AddItemButton>
       </AddItemButtonDiv>
-    </div>
+    </Container>
   );
 }
 
